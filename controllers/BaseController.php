@@ -1,6 +1,7 @@
 <?php
 require_once './models/Auth.php';
 
+
 class BaseController
 {
     public function makeView($controllerPrefix,$viewName,array $params=[])

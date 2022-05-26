@@ -1,20 +1,22 @@
 <?php
 require_once './controllers/BaseController.php';
-require_once './models/Auth.php';
+
+
 
 class LoginController extends BaseController
 {
     public function index()
     {
         $auth = new Auth();
+
         if(!$auth->isLoggedIn())
         {
             $this->makeView('login', 'index');
         }
-        else
+        /*else
         {
             $this->redirectToRoute('plano', 'index');
-        }
+        }*/
     }
 
     public function login()
@@ -22,9 +24,10 @@ class LoginController extends BaseController
         if(isset($_POST['name'], $_POST['password']))
         {
             $auth = new Auth();
+
             if($auth->checkLogin($_POST['name'], $_POST['password']))
             {
-                $this->redirectToRoute('plano', 'index');
+                $this->redirectToRoute('site', 'index');
             }
             else
             {

@@ -51,43 +51,7 @@ else
                     break;
             }
             break;
-        case "book":
-            $controller = new BookController();
-            switch ($a)
-            {
-                case 'index':
-                    $controller->index();
-                    break;
 
-                case "show":
-                    $id=$_GET['id'];
-                    $controller->show($id);
-                    break;
-
-                case "create":
-                    $controller->create();
-                    break;
-
-                case "store":
-                    $controller->store();
-                    break;
-
-                case "edit":
-                    $id=$_GET['id'];
-                    $controller->edit($id);
-                    break;
-
-                case "update":
-                    $id=$_GET['id'];
-                    $controller->update($id);
-                    break;
-
-                case "delete":
-                    $id=$_GET['id'];
-                    $controller->delete($id);
-                    break;
-            }
-            break;
 
         case "site":
             $controller = new SiteController();

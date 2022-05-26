@@ -5,14 +5,20 @@ class Auth
 {
     public function checkLogin($username, $password)
     {
-        if($username == "Tiago" && $password == "1234")
+        $user = utilizadores::find_by_username([$username]);
+        $pass=$user->password;
+        $nome=$user->username;
+        if($username == $nome && $password == $pass)
         {
-            $_SESSION['nome'] = $username;
+            $_SESSION['nome'] = $nome;
+            $_SESSION['role'] = $user->role;
             return true;
+
         }
         else
         {
             return false;
+
         }
     }
 
