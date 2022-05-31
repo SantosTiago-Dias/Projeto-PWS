@@ -2,7 +2,7 @@
 require_once './startup/boot.php';
 require_once './controllers/SiteController.php';
 require_once './controllers/LoginController.php';
-
+require_once './controllers/BackEndController.php';
 
 if(!isset($_GET['c'], $_GET['a']))
 {
@@ -38,16 +38,15 @@ else
             }
             break;
 
-        case "plano":
-            $controller = new PlanoController();
+        case "backend":
+            $controller = new BackEndController();
             switch ($a)
             {
                 case "index":
                     $controller->index();
                     break;
 
-                case "calcular":
-                    $controller->calcular();
+                case "":
                     break;
             }
             break;

@@ -13,10 +13,10 @@ class LoginController extends BaseController
         {
             $this->makeView('login', 'index');
         }
-        /*else
+        else
         {
-            $this->redirectToRoute('plano', 'index');
-        }*/
+            $this->redirectToRoute('backend', 'index');
+        }
     }
 
     public function login()
@@ -27,7 +27,7 @@ class LoginController extends BaseController
 
             if($auth->checkLogin($_POST['name'], $_POST['password']))
             {
-                $this->redirectToRoute('site', 'index');
+                $this->redirectToRoute('back', 'index');
             }
             else
             {
