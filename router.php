@@ -3,6 +3,7 @@ require_once './startup/boot.php';
 require_once './controllers/SiteController.php';
 require_once './controllers/LoginController.php';
 require_once './controllers/BackEndController.php';
+require_once './controllers/EmpresaController.php';
 
 if(!isset($_GET['c'], $_GET['a']))
 {
@@ -44,6 +45,23 @@ else
             {
                 case "index":
                     $controller->index();
+                    break;
+
+                case "":
+                    break;
+            }
+            break;
+
+        case "empresa":
+            $controller = new EmpresaController();
+            switch ($a)
+            {
+                case "index":
+                    $controller->index();
+                    break;
+                case "show":
+                    $id=$_GET['id'];
+                    $controller->show($id);
                     break;
 
                 case "":

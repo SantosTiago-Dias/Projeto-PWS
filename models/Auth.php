@@ -36,4 +36,9 @@ class Auth
     {
         return $_SESSION['nome'];
     }
+
+    public function getRole()
+    {
+        return $_SESSION['role'];
+    }
 }

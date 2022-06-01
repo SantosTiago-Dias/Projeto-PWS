@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40439ba3-e6c1-4627-8317-f0ba04f292a9" name="Changes" comment="Template dash">
+      <change afterPath="$PROJECT_DIR$/controllers/EmpresaController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/Empresa/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/Empresa/show.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/Auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/empresa.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/Empresa.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router.php" beforeDir="false" afterPath="$PROJECT_DIR$/router.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/backend/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/backend/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layout/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/layout/footer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/layout/header_Back.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/layout/header_Back.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +113,8 @@
       <workItem from="1653587858691" duration="3178000" />
       <workItem from="1653596628957" duration="464000" />
       <workItem from="1654008999062" duration="6537000" />
-      <workItem from="1654020166493" duration="1666000" />
+      <workItem from="1654020166493" duration="1710000" />
+      <workItem from="1654078234877" duration="5564000" />
     </task>
     <task id="LOCAL-00001" summary="login Funciona">
       <created>1653591013016</created>

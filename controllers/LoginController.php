@@ -27,7 +27,7 @@ class LoginController extends BaseController
 
             if($auth->checkLogin($_POST['name'], $_POST['password']))
             {
-                $this->redirectToRoute('back', 'index');
+                $this->redirectToRoute('backend', 'index');
             }
             else
             {
