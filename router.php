@@ -64,6 +64,16 @@ else
                     $controller->show($id);
                     break;
 
+                case "edit":
+                    $id=$_GET['id'];
+                    $controller->edit($id);
+                    break;
+
+                case "update":
+                    $id=$_GET['id'];
+                    $controller->update($id);
+                    break;
+
                 case "":
                     break;
             }
