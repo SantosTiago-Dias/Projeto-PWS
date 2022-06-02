@@ -5,6 +5,7 @@ require_once './controllers/LoginController.php';
 require_once './controllers/BackEndController.php';
 require_once './controllers/EmpresaController.php';
 require_once './controllers/FaturaController.php';
+require_once './controllers/IvaController.php';
 
 if(!isset($_GET['c'], $_GET['a']))
 {
@@ -42,6 +43,19 @@ else
 
         case "backend":
             $controller = new BackEndController();
+            switch ($a)
+            {
+                case "index":
+                    $controller->index();
+                    break;
+
+                case "":
+                    break;
+            }
+            break;
+
+        case "iva":
+            $controller = new IvaController();
             switch ($a)
             {
                 case "index":

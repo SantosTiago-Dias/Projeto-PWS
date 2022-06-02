@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40439ba3-e6c1-4627-8317-f0ba04f292a9" name="Changes" comment="Template dash">
-      <change afterPath="$PROJECT_DIR$/controllers/FaturaController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Fatura.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/fatura/baseFatura.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/IvaController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/LinhaFaturaController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/Iva.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/iva/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/BackEndController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/BackEndController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/FaturaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/FaturaController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/router.php" beforeDir="false" afterPath="$PROJECT_DIR$/router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Empresa/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Empresa/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layout/header_Back.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/layout/header_Back.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,13 +73,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/views/empresa" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/views/iva" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Projeto PWC\views\iva" />
       <recent name="C:\wamp64\www\Projeto PWC\views\empresa" />
       <recent name="C:\wamp64\www\Projeto PWC\controllers" />
       <recent name="C:\wamp64\www\ficha07\public" />
@@ -115,7 +115,7 @@
       <workItem from="1654020166493" duration="1710000" />
       <workItem from="1654078234877" duration="5881000" />
       <workItem from="1654100187907" duration="4021000" />
-      <workItem from="1654166875965" duration="1718000" />
+      <workItem from="1654166875965" duration="3510000" />
     </task>
     <task id="LOCAL-00001" summary="login Funciona">
       <created>1653591013016</created>
@@ -159,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654102910818</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Template dash">
+      <created>1654168763853</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1654168763853</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

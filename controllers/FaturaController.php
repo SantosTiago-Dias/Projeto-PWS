@@ -28,6 +28,27 @@ class FaturaController extends BaseController
         }
     }
 
+    public function create()
+    {
+
+
+        if($auth->isLoggedIn())
+        {
+            $this->makeView('empresa', 'show',['empresas'=>$empresa,'nome'=>$nome]);
+        }
+        else
+        {
+            $this->redirectToRoute('backend', 'index');
+        }
+    }
+
+    public function store($idFatura)
+    {
+        //validar Fatura
+
+        //redirect linha fatura create(idFatura)
+    }
+
     public function edit($id)
     {
         $auth= new auth();
