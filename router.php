@@ -65,6 +65,26 @@ else
                 case "create":
                     $controller->create();
                     break;
+                case "store":
+                    $controller->store();
+                    break;
+                case "edit":
+                    $id=$_GET['id'];
+                    $controller->edit($id);
+                    break;
+                case "update":
+                    $id=$_GET['id'];
+                    $controller->update($id);
+                    break;
+
+                case "ativar":
+                    $id=$_GET['id'];
+                    $controller->ative($id);
+                    break;
+                case "desativar":
+                    $id=$_GET['id'];
+                    $controller->desativar($id);
+                    break;
 
                 case "":
                     break;

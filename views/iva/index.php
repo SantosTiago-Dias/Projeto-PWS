@@ -24,7 +24,7 @@
                 <td style="color: white"><?=$iva->descricao?></td>
                 <?php if ($iva->status== '1')
                     {
-                        echo '<td style="background-color: green">Ativo</td>';
+                        echo '<td style="background-color: green;color: white">Ativo</td>';
                     }
                     else{
                         echo '<td style="background-color: red;color: white">Desativo</td>';
@@ -33,17 +33,16 @@
 
 
                 <td>
-                    <a href="router.php?c=iva&a=create&id=<?=$iva->id ?>"
-                       class="btn btn-info" role="button">Show</a>
-                    <a href="router.php?c=empresa&a=edit&id=<?= $iva->id ?>"
+
+                    <a href="router.php?c=iva&a=edit&id=<?= $iva->id ?>"
                        class="btn btn-info" role="button">Edit</a>
                     <?php if ($iva->status== '1')
                     {
-                        echo '   <a href="router.php?c=book&a=delete&id='.$iva->id.'"
+                        echo '   <a href="router.php?c=iva&a=desativar&id='.$iva->id.'"
                         class="btn btn-danger" role="button">Desativar</a>';
                     }
                     else{
-                        echo '   <a href="router.php?c=book&a=delete&id='.$iva->id.'"
+                        echo '   <a href="router.php?c=iva&a=ativar&id='.$iva->id.'"
                         class="btn btn-success" role="button">Ativar</a>';
                     }?>
 

@@ -30,20 +30,72 @@ class IvaController extends BaseController
 
     }
 
-    public function store($idFatura)
+    public function store()
     {
-        //validar Fatura
+        $attributes = array('taxaIva' => $_POST['iva'], 'descricao' => $_POST['descricao'],'status'=>'1');
+        $iva= new Iva($attributes);
+        if ($iva->is_valid()) {
 
-        //redirect linha fatura create(idFatura)
+            $iva->save();
+            //redirecionar para o index
+            $this->redirectToRoute('iva', 'index');
+        } else {
+            $this->makeView('iva', 'create', ['iva' => $iva]);
+        }
     }
 
-    public function edit($idLinhaFatura)
+    public function edit($id)
     {
+        $auth = new auth();
+        $iva = Iva::Find([$id]);
 
+        $nome = $auth->getUsername();
+        $role = $auth->getRole();
+        $this->makeView('iva', 'edit', ['role' => $role, 'nome' => $nome,'iva'=>$iva]);
     }
 
     public function update($id)
     {
+
+        $attributes = array('taxaIva' => $_POST['iva'], 'descricao' => $_POST['descricao']);
+        $iva = Iva::Find([$id]);
+
+        $iva->update_attributes($attributes);
+        if ($iva->is_valid()) {
+            $iva->save();
+            //redirecionar para o index
+            echo "aaa";
+            $this->redirectToRoute('iva', 'index');
+        } else {
+            $this->makeView('iva', 'edit', ['iva' => $iva]);
+        }
+    }
+
+    public function ative($id)
+    {
+
+        $attributes = array('status'=>1);
+        $iva = Iva::Find([$id]);
+
+        $iva->update_attributes($attributes);
+
+        $iva->save();
+        //redirecionar para o index
+        $this->redirectToRoute('iva', 'index');
+    }
+
+    public function desativar($id)
+    {
+
+        $attributes = array('status'=>0);
+        $iva = Iva::Find([$id]);
+
+        $iva->update_attributes($attributes);
+        $iva->save();
+            //redirecionar para o index
+       $this->redirectToRoute('iva', 'index');
+
+
 
     }
 }
