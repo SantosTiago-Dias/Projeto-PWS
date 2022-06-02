@@ -184,9 +184,9 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./public/index.html" class="nav-link">
+                                <a href="?c=iva&a=index" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Stock</p>
+                                    <p>IVA</p>
                                 </a>
                             </li>
                             <?php } ?>

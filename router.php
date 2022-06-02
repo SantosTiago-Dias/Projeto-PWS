@@ -62,6 +62,10 @@ else
                     $controller->index();
                     break;
 
+                case "create":
+                    $controller->create();
+                    break;
+
                 case "":
                     break;
             }

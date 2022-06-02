@@ -19,9 +19,14 @@ class IvaController extends BaseController
 
     }
 
-    public function create($idFatura, $idProduct)
+    public function create()
     {
+        $auth = new auth();
+        $ivas = Iva::all();
 
+        $nome = $auth->getUsername();
+        $role = $auth->getRole();
+        $this->makeView('iva', 'create', ['role' => $role, 'nome' => $nome,'ivas'=>$ivas]);
 
     }
 

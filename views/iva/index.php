@@ -33,7 +33,7 @@
 
 
                 <td>
-                    <a href="router.php?c=empresa&a=show&id=<?=$iva->id ?>"
+                    <a href="router.php?c=iva&a=create&id=<?=$iva->id ?>"
                        class="btn btn-info" role="button">Show</a>
                     <a href="router.php?c=empresa&a=edit&id=<?= $iva->id ?>"
                        class="btn btn-info" role="button">Edit</a>
@@ -57,7 +57,7 @@
 
         </table>
         <br>
-        <a href="router.php?c=empresa&a=show&id=<?=$iva->id ?>"
+        <a href="router.php?c=iva&a=create"
            class="btn btn-info" role="button">Criar Iva</a>
     </div>
     <!-- /.card-body -->

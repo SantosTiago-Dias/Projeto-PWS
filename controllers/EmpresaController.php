@@ -10,10 +10,10 @@ class EmpresaController extends BaseController
         $auth= new auth();
         $empresa = Empresa::all();
         $nome=$auth->getUsername();
-
+        $role = $auth->getRole();
         if($auth->isLoggedIn())
         {
-         $this->makeView('empresa', 'index',['empresas'=>$empresa,'nome'=>$nome]);
+         $this->makeView('empresa', 'index',['empresas'=>$empresa,'nome'=>$nome,'role'=>$role]);
         }
         else
         {
@@ -27,10 +27,11 @@ class EmpresaController extends BaseController
         $empresa = Empresa::find([$id]);
 
         $nome=$auth->getUsername();
+        $role = $auth->getRole();
 
         if($auth->isLoggedIn())
         {
-            $this->makeView('empresa', 'show',['empresas'=>$empresa,'nome'=>$nome]);
+            $this->makeView('empresa', 'show',['empresas'=>$empresa,'nome'=>$nome,'role'=>$role]);
         }
         else
         {
@@ -44,10 +45,10 @@ class EmpresaController extends BaseController
         $empresa = Empresa::find([$id]);
 
         $nome=$auth->getUsername();
-
+        $role = $auth->getRole();
         if($auth->isLoggedIn())
         {
-            $this->makeView('empresa', 'edit',['empresas'=>$empresa,'nome'=>$nome]);
+            $this->makeView('empresa', 'edit',['empresas'=>$empresa,'nome'=>$nome,'role'=>$role]);
         }
         else
         {
@@ -61,6 +62,7 @@ class EmpresaController extends BaseController
         //your form name fields must match the ones of the table fields
         $auth= new auth();
         $nome=$auth->getUsername();
+        $role = $auth->getRole();
         $attributes = array('nome' => $_POST['nome'], 'email' => $_POST['email'], 'telefone' => $_POST['telefone'], 'nif' => $_POST['nif'], 'morada' => $_POST['morada'], 'codPostal' => $_POST['codPostal'], 'local' => $_POST['local'], 'capSocial' => $_POST['capSocial'], 'descricao' => $_POST['descricao']);
         $empresa = Empresa::find([$id]);
         $empresa->update_attributes($_POST);
@@ -68,7 +70,7 @@ class EmpresaController extends BaseController
             $empresa->save();
             $this->redirectToRoute('empresa', 'index');
         } else {
-            $this->makeView('empresa', 'edit',['empresas'=>$empresa,'nome'=>$nome]);
+            $this->makeView('empresa', 'edit',['empresas'=>$empresa,'nome'=>$nome,'role'=>$role]);
         }
     }
 
