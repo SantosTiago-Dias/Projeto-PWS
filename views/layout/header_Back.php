@@ -66,6 +66,7 @@
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
+
                     <li class="nav-item">
                         <a  class="nav-link">
 
@@ -74,22 +75,29 @@
 
                             </p>
                         </a>
+
                         <ul class="nav nav">
+                            <?php if($role=='Admin' || $role =='Funcionario'){?>
                             <li class="nav-item">
                                 <a href="./public/index.html" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Adicionar Faturas</p>
                                 </a>
                             </li>
+                            <?php } ?>
+                            <?php if($role=='Cliente'){?>
                             <li class="nav-item">
                                 <a href="./public/index.html" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Ver Faturas</p>
                                 </a>
                             </li>
+                            <?php } ?>
 
                         </ul>
                     </li>
+
+                    <?php if($role=='Admin'){?>
                     <li class="nav-item">
                         <a  class="nav-link">
 
@@ -114,6 +122,8 @@
 
                         </ul>
                     </li>
+                    <?php } ?>
+                    <?php if($role=='Admin' || $role='Funcinario'){?>
                     <li class="nav-item">
                         <a  class="nav-link">
 
@@ -132,6 +142,8 @@
 
                         </ul>
                     </li>
+                    <?php } ?>
+                    <?php if($role=='Admin' || $role='Funcinario'){?>
                     <li class="nav-item">
                         <a  class="nav-link">
 
@@ -150,6 +162,8 @@
 
                         </ul>
                     </li>
+                    <?php } ?>
+                    <?php if($role=='Admin' || $role='Funcinario'){?>
                     <li class="nav-item">
                         <a  class="nav-link">
                             <p>
@@ -175,6 +189,7 @@
                                     <p>Stock</p>
                                 </a>
                             </li>
+                            <?php } ?>
 
                         </ul>
                     </li>

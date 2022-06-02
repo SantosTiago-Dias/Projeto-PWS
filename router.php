@@ -4,6 +4,7 @@ require_once './controllers/SiteController.php';
 require_once './controllers/LoginController.php';
 require_once './controllers/BackEndController.php';
 require_once './controllers/EmpresaController.php';
+require_once './controllers/FaturaController.php';
 
 if(!isset($_GET['c'], $_GET['a']))
 {
@@ -78,7 +79,10 @@ else
                     break;
             }
             break;
-
+        case "fatura":
+            $controller = new FaturaController();
+            $controller->index();
+            break;
 
         case "site":
             $controller = new SiteController();

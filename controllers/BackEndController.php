@@ -10,9 +10,10 @@ class BackEndController extends BaseController
     {
         $auth = new Auth();
         $nome=$auth->getUsername();
+        $role=$auth->getRole();
         if($auth->isLoggedIn())
         {
-            $this->makeView('backend', 'index',['nome'=>$nome]);
+            $this->makeView('backend', 'index',['nome'=>$nome,'role'=>$role]);
         }
         else
         {
