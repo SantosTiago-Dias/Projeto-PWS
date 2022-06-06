@@ -19,9 +19,12 @@ class LinhaFaturaController extends BaseController
 
     }
 
-    public function create($idFatura, $idProduct)
+    public function create($idProduct)
     {
-
+        $produto=Produtos::find([$idProduct]);
+        //$idfatura=Fatura::last();
+        //var_dump($idfatura);
+        $this->makeView('linhaFatura', 'create',['produto'=>$produto]);
 
     }
 
@@ -62,6 +65,14 @@ class LinhaFaturaController extends BaseController
             $this->makeView('empresa', 'edit', ['empresas' => $empresa, 'nome' => $nome]);
         }
     }
+
+    public function selectProduto()
+    {
+        $auth= new auth();
+        $produtos=Produtos::all();
+        $this->makeView('linhaFatura', 'selectProduto',['produtos'=>$produtos]);
+    }
+
 }
 
 

@@ -15,13 +15,15 @@
 
     <!-- Table row -->
     <div class="row">
+
         <div class="col-12 table-responsive">
             <table class="table table-striped">
                 <thead>
                 <tr>
+                    <th>Referencia</th>
                     <th>Nome</th>
-                    <th>Morada</th>
-                    <th>Localidade</th>
+                    <th>Stock</th>
+                    <th>Preço</th>
                     <th></th>
                 </tr>
                 </thead>
@@ -29,18 +31,20 @@
 
 
                     <?php
-                    foreach ($clientes as $client) { ?>
+                    foreach ($produtos as $produto) { ?>
                     <tr>
-                        <td style="color: white"><?=$client->username?></td>
-                        <td style="color: white"><?=$client->morada?></td>
-                        <td style="color: white"><?=$client->localidade?></td>
-                        <td style="color: white"><a href="router.php?c=fatura&a=store&id=<?=$client->id?>" class="btn btn-primary" role="button">Selecionar Cliente</a></td>
+                        <td style="color: white"><?=$produto->id?></td>
+                        <td style="color: white"><?=$produto->nome?></td>
+                        <td style="color: white"><?=$produto->stock?></td>
+                        <td style="color: white"><?= number_format($produto->preco, 2, '.', '');?>€</td>
+                        <td style="color: white"><a href="router.php?c=linhaFatura&a=create&id=<?=$produto->id?>" class="btn btn-primary" role="button">Selecionar Produto</a></td>
                     </tr>
                     <?php } ?>
 
 
                 </tbody>
             </table>
+
         </div>
         <!-- /.col -->
     </div>

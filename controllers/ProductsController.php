@@ -6,11 +6,8 @@ class ProductsController extends BaseController
     public function index()
     {
         $auth = new auth();
-        $ivas = Iva::all();
-
-        $nome = $auth->getUsername();
-        $role = $auth->getRole();
-        $this->makeView('iva', 'index', ['role' => $role, 'nome' => $nome,'ivas'=>$ivas]);
+        $produtos=Produtos::all();
+        $this->makeView('produto', 'index',['produtos'=>$produtos]);
 
     }
 

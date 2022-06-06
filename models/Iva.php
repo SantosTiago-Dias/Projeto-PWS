@@ -7,4 +7,5 @@ class Iva extends \ActiveRecord\Model
         array('descricao', 'message' => 'It must be provided'),
 
     );
+
 }

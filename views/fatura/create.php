@@ -29,11 +29,14 @@
         <!-- /.col -->
         <div class="col-sm-4 invoice-col">
             <b>Cliente:</b><br>
-            <br>
-            <b>Nome Cliente:<a href="router.php?c=fatura&a=selectCliente" class="btn btn-primary float-right">Selecionar cliente</a>
-            <b>Morada:</b> <br>
-            <b>Codigo-Postal:XXX,Localidade:</b> <br>
-            <b>Nif:XXX</b>
+
+            <strong>Nome Empresa</strong><br>
+            Morada:<br>
+            Cod-Postal,Localidade<br>
+            Telemovel:<br>
+            Email: <br>
+            Nif:
+                <a href="router.php?c=fatura&a=selectCliente" class="btn btn-primary float-right">Selecionar cliente</a>
         </div>
         <!-- /.col -->
     </div>

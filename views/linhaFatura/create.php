@@ -10,98 +10,50 @@
         <!-- /.col -->
     </div>
     <!-- info row -->
-    <div class="row invoice-info">
-        <div class="col-sm-4 invoice-col">
-            From
-            <address>
-                <strong>Nome Empresa</strong><br>
-                Morada:<br>
-                Cod-Postal,Localidade<br>
-                Telemovel:<br>
-                Email: <br>
-                Nif:
-            </address>
-        </div>
-        <!-- /.col -->
-        <div class="col-sm-4 invoice-col">
 
-        </div>
-        <!-- /.col -->
-        <div class="col-sm-4 invoice-col">
-            <b>Cliente:</b><br>
-            <br>
-            <b>Nome Cliente:<a href="router.php?c=fatura&a=selectCliente" class="btn btn-primary float-right">Selecionar cliente</a>
-            <b>Morada:</b> <br>
-            <b>Codigo-Postal:XXX,Localidade:</b> <br>
-            <b>Nif:XXX</b>
-        </div>
-        <!-- /.col -->
-    </div>
-    <!-- /.row -->
-
-    <!-- Table row -->
-    <div class="row">
-        <div class="col-12 table-responsive">
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Referencia</th>
-                    <th>Produto</th>
-                    <th>Quantidade</th>
-                    <th>Preço Unidade</th>
-                    <th>Iva</th>
-                    <th>Taxa</th>
-                    <th>Subtotal</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Call of Duty</td>
-                    <td>455-981-221</td>
-                    <td>El snort testosterone trophy driving gloves handsome</td>
-                    <td>$64.50</td>
-                    <td>$64.50</td>
-                    <td>$64.50</td>
-                </tr>
-
-                </tbody>
-            </table>
-        </div>
-        <!-- /.col -->
-    </div>
     <!-- /.row -->
 
     <div class="row">
+        <?= print_r($produto->iva_id)?>
         <!-- accepted payments column -->
-        <div class="col-6">
-
-        </div>
-        <!-- /.col -->
-        <div class="col-6">
-
-
-            <div class="table-responsive">
-                <table class="table">
-                    <tr>
-                        <th style="width:50%">Subtotal:</th>
-                        <td>$250.30</td>
-                    </tr>
-                    <tr>
-                        <th>Iva</th>
-                        <td>$10.34</td>
-                    </tr>
-                    <tr>
-                        <th>Total:</th>
-                        <td>$5.80</td>
-                    </tr>
-                    <tr>
-                        <th>Total:</th>
-                        <td>$265.24</td>
-                    </tr>
-                </table>
+        <form>
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Referencia</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" style="color: white;" id="staticEmail" value="<?php echo $produto->id ?>" disabled>
+                </div>
             </div>
-        </div>
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Nome do Produto</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" style="color: white;" id="staticEmail" value="<?php echo $produto->nome ?>" disabled>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Referencia</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" style="color: white;" id="staticEmail" value="<?php echo $produto->id ?>" disabled>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Preço</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" style="color: white;" id="staticEmail" value="<?php echo number_format($produto->preco, 2, '.', ''); ?> €" disabled>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Iva</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" style="color: white;" id="staticEmail" value="<?php echo $produto->iva_id->taxaiva ?>" disabled>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Nome do Produto</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" style="color: white;" id="staticEmail" value="<?php echo $produto->nome ?>" disabled>
+                </div>
+            </div>
+        </form>
         <!-- /.col -->
     </div>
     <!-- /.row -->

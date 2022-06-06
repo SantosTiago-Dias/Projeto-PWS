@@ -51,11 +51,10 @@ class FaturaController extends BaseController
         ActiveRecord\Connection::$datetime_format = 'Y-m-d H:i:s';// meter o tipo de data assim por causa do php active record
         $auth= new auth();
         $nome=$auth->getUsername();
+        $cliente=utilizadores::find([$idClient]);
         date_default_timezone_set('Europe/Lisbon');
         $dt = date_create('now');
         $date = date_format($dt, 'm-d-Y H:i:s');
-
-        var_dump($date);
         $funcionario=utilizadores::find(['username'=>$nome]);
         $values=array('dtaFatura'=> $date,'Cliente_Id'=>$idClient,'Funcionario_ID'=>$funcionario->id,'status'=>'1');
         $fatura= new Fatura($values);
@@ -63,9 +62,9 @@ class FaturaController extends BaseController
 
             $fatura->save();
             //redirecionar para o index
-            $this->redirectToRoute('linhaFatura', 'create');
+            $this->redirectToRoute('linhaFatura', 'create',);
         } else {
-            $this->makeView('fatura', 'create', ['iva' => $iva]);
+            $this->makeView('fatura', 'create');
         }
     }
 

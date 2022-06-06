@@ -1,8 +1,6 @@
 <?php
 require_once './controllers/BaseController.php';
 
-
-
 class EmpresaController extends BaseController
 {
     public function index()
