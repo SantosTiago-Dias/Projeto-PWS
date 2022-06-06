@@ -7,6 +7,7 @@
         <table id="empresa" class="table table-bordered table-striped">
             <thead>
             <tr>
+                <!-- -->
                 <th>Referencia</th>
                 <th>Nome</th>
                 <th>Stock</th>
