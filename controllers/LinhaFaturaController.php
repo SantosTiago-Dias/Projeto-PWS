@@ -8,9 +8,8 @@ class LinhaFaturaController extends BaseController
         $auth = new auth();
 
 
-        $nome = $auth->getUsername();
-        $role = $auth->getRole();
-        $this->makeView('fatura', 'baseFatura', ['role' => $role, 'nome' => $nome]);
+
+        $this->makeView('linhaFatura', 'create');
 
     }
 

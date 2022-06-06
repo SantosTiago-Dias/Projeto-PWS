@@ -1,8 +1,12 @@
 <?php
+
 require_once './controllers/BaseController.php';
+
 
 class FaturaController extends BaseController
 {
+
+
     public function index()
     {
         $auth= new auth();
@@ -10,7 +14,7 @@ class FaturaController extends BaseController
 
         $nome=$auth->getUsername();
         $role=$auth->getRole();
-        $this->makeView('fatura', 'baseFatura',['role'=>$role,'nome'=>$nome]);
+        $this->makeView('fatura', 'baseFatura');
 
     }
 
@@ -20,7 +24,7 @@ class FaturaController extends BaseController
 
         if($auth->isLoggedIn())
         {
-            $this->makeView('empresa', 'show',['empresas'=>$empresa,'nome'=>$nome]);
+            $this->makeView('empresa', 'show',['empresas'=>$empresa]);
         }
         else
         {
@@ -30,23 +34,39 @@ class FaturaController extends BaseController
 
     public function create()
     {
-
+        $auth= new auth();
 
         if($auth->isLoggedIn())
         {
-            $this->makeView('empresa', 'show',['empresas'=>$empresa,'nome'=>$nome]);
+            $this->makeView('fatura', 'create');
         }
         else
         {
-            $this->redirectToRoute('backend', 'index');
+            $this->makeView('fatura', 'baseFatura');
         }
     }
 
-    public function store($idFatura)
+    public function store($idClient)
     {
-        //validar Fatura
+        ActiveRecord\Connection::$datetime_format = 'Y-m-d H:i:s';// meter o tipo de data assim por causa do php active record
+        $auth= new auth();
+        $nome=$auth->getUsername();
+        date_default_timezone_set('Europe/Lisbon');
+        $dt = date_create('now');
+        $date = date_format($dt, 'm-d-Y H:i:s');
 
-        //redirect linha fatura create(idFatura)
+        var_dump($date);
+        $funcionario=utilizadores::find(['username'=>$nome]);
+        $values=array('dtaFatura'=> $date,'Cliente_Id'=>$idClient,'Funcionario_ID'=>$funcionario->id,'status'=>'1');
+        $fatura= new Fatura($values);
+        if ($fatura->is_valid()) {
+
+            $fatura->save();
+            //redirecionar para o index
+            $this->redirectToRoute('linhaFatura', 'create');
+        } else {
+            $this->makeView('fatura', 'create', ['iva' => $iva]);
+        }
     }
 
     public function edit($id)
@@ -54,11 +74,9 @@ class FaturaController extends BaseController
         $auth= new auth();
         $empresa = Empresa::find([$id]);
 
-        $nome=$auth->getUsername();
-
         if($auth->isLoggedIn())
         {
-            $this->makeView('empresa', 'edit',['empresas'=>$empresa,'nome'=>$nome]);
+            $this->makeView('empresa', 'edit',['empresas'=>$empresa]);
         }
         else
         {
@@ -79,9 +97,19 @@ class FaturaController extends BaseController
             $empresa->save();
             $this->redirectToRoute('empresa', 'index');
         } else {
-            $this->makeView('empresa', 'edit',['empresas'=>$empresa,'nome'=>$nome]);
+            $this->makeView('empresa', 'edit',['empresas'=>$empresa]);
         }
     }
 
+    public function selectCliente()
+    {
+        $auth= new auth();
+
+
+        $nome=$auth->getUsername();
+        $role=$auth->getRole();
+        $clientes=utilizadores::all(['role'=>'Cliente']);
+        $this->makeView('fatura', 'selectClient',['clientes'=>$clientes]);
+    }
 
 }

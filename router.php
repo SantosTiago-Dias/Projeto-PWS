@@ -6,6 +6,7 @@ require_once './controllers/BackEndController.php';
 require_once './controllers/EmpresaController.php';
 require_once './controllers/FaturaController.php';
 require_once './controllers/IvaController.php';
+require_once './controllers/LinhaFaturaController.php';
 
 if(!isset($_GET['c'], $_GET['a']))
 {
@@ -118,10 +119,59 @@ else
             }
             break;
         case "fatura":
-            $controller = new FaturaController();
-            $controller->index();
-            break;
 
+            $controller = new FaturaController();
+            switch ($a)
+            {
+                case "index":
+                    $controller->index();
+                    break;
+                case "create":
+
+                    $controller->create();
+                    break;
+
+                case "store":
+                    $id=$_GET['id'];
+                    $controller->store($id);
+                    break;
+
+                case "update":
+                    $id=$_GET['id'];
+                    $controller->update($id);
+                    break;
+
+                case "selectCliente":
+                    $controller->selectCliente();
+                    break;
+            }
+            break;
+        case "linhaFatura":
+            $controller = new LinhaFaturaController();
+            switch ($a)
+            {
+                case "index":
+                    $controller->index();
+                    break;
+                case "show":
+                    $id=$_GET['id'];
+                    $controller->show($id);
+                    break;
+
+                case "edit":
+                    $id=$_GET['id'];
+                    $controller->edit($id);
+                    break;
+
+                case "update":
+                    $id=$_GET['id'];
+                    $controller->update($id);
+                    break;
+
+                case "":
+                    break;
+            }
+            break;
         case "site":
             $controller = new SiteController();
             $controller->index();

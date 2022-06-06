@@ -58,20 +58,27 @@ class EmpresaController extends BaseController
 
     public function update($id)
     {
-        //find resource (activerecord/model) instance where PK = $id
-        //your form name fields must match the ones of the table fields
         $auth= new auth();
         $nome=$auth->getUsername();
         $role = $auth->getRole();
-        $attributes = array('nome' => $_POST['nome'], 'email' => $_POST['email'], 'telefone' => $_POST['telefone'], 'nif' => $_POST['nif'], 'morada' => $_POST['morada'], 'codPostal' => $_POST['codPostal'], 'local' => $_POST['local'], 'capSocial' => $_POST['capSocial'], 'descricao' => $_POST['descricao']);
         $empresa = Empresa::find([$id]);
-        $empresa->update_attributes($_POST);
-        if ($empresa->is_valid()) {
-            $empresa->save();
-            $this->redirectToRoute('empresa', 'index');
-        } else {
+        if (!empty($_POST))
+        {
+
+            $attributes = array('nome' => $_POST['nome'], 'email' => $_POST['email'], 'telefone' => $_POST['telefone'], 'nif' => $_POST['nif'], 'morada' => $_POST['morada'], 'codPostal' => $_POST['codPostal'], 'local' => $_POST['local'], 'capSocial' => $_POST['capSocial'], 'descricao' => $_POST['descricao']);
+
+            $empresa->update_attributes($_POST);
+            if ($empresa->is_valid()) {
+                $empresa->save();
+                $this->redirectToRoute('empresa', 'index');
+            } else {
+                $this->makeView('empresa', 'edit',['empresas'=>$empresa,'nome'=>$nome,'role'=>$role]);
+            }
+        }
+        else{
             $this->makeView('empresa', 'edit',['empresas'=>$empresa,'nome'=>$nome,'role'=>$role]);
         }
+
     }
 
 

@@ -79,20 +79,20 @@
                         <ul class="nav nav">
                             <?php if($role=='Admin' || $role =='Funcionario'){?>
                             <li class="nav-item">
-                                <a href="./public/index.html" class="nav-link">
+                                <a href="router.php?c=fatura&a=create" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Adicionar Faturas</p>
                                 </a>
                             </li>
                             <?php } ?>
-                            <?php if($role=='Cliente'){?>
+
                             <li class="nav-item">
-                                <a href="./public/index.html" class="nav-link">
+                                <a href="router.php?c=fatura&a=index" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Ver Faturas</p>
                                 </a>
                             </li>
-                            <?php } ?>
+
 
                         </ul>
                     </li>

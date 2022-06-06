@@ -1,8 +1,12 @@
 <?php
+require_once 'vendor/autoload.php';
 require_once './controllers/BaseController.php'; //quando erda de  outra class
 //base Controller e como se fosse a class mae
 require_once './models/Utilizadores.php';
 require_once './models/Auth.php';
+
+
+
 
 
 class BaseAuthController extends BaseController

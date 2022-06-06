@@ -13,5 +13,6 @@ ActiveRecord\Config::initialize(function($cfg)
             'development' => 'mysql://root@localhost/Projeto_PWC',
         )
     );
+
 });
 

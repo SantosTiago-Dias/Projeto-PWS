@@ -12,7 +12,8 @@ class BaseController
 
         if ($auth->isLoggedIn())
         {
-            $username=$auth->getUsername();
+            $nome=$auth->getUsername();
+            $role=$auth->getRole();
             require_once './views/layout/header_Back.php';
             require_once './views/' . $controllerPrefix . '/' . $viewName . '.php';
 
