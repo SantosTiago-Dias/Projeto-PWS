@@ -14,45 +14,73 @@
     <!-- /.row -->
 
     <div class="row">
-        <?= print_r($produto->iva_id)?>
+
         <!-- accepted payments column -->
         <form>
-            <div class="form-group row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Referencia</label>
-                <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext" style="color: white;" id="staticEmail" value="<?php echo $produto->id ?>" disabled>
+            <div class="row invoice-info">
+                <div class="col-sm-4 invoice-col">
+                    <b>Empresa:</b><br>
+                    <br>
+                    <address>
+                        <strong>Nome da Empresa:</strong><?php if(isset($empresa)){echo $empresa->nome;}?><br>
+                        <strong>Email: </strong> <?php if(isset($empresa)) {echo $empresa->email;}?><br>
+                        <strong>Nif: </strong> <?php if(isset($empresa)) {echo $empresa->nif;}?><br>
+                        <strong>Telemovel: </strong> <?php if(isset($empresa)) {echo $empresa->telefone;}?><br>
+                        <strong>Morada: </strong> <?php if(isset($empresa)) {echo $empresa->morada;}?><br>
+                        <strong>Cod-Postal,Localidade: </strong> <?php if(isset($empresa)) {echo $empresa->codpostal.','.$empresa->local;}?><br>
+
+
+
+                    </address>
                 </div>
-            </div>
-            <div class="form-group row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Nome do Produto</label>
-                <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext" style="color: white;" id="staticEmail" value="<?php echo $produto->nome ?>" disabled>
+                <!-- /.col -->
+                <div class="col-sm-4 invoice-col">
+
                 </div>
-            </div>
-            <div class="form-group row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Referencia</label>
-                <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext" style="color: white;" id="staticEmail" value="<?php echo $produto->id ?>" disabled>
+                <!-- /.col -->
+                <div class="col-sm-4 invoice-col">
+
+                    <b>Cliente:</b><br>
+                    <br>
+                    <strong>Nome do Cliente: </strong><?php if(isset($cliente)){echo $cliente->username;}?><br>
+                    <strong>Email: </strong><?php if(isset($cliente)) {echo $cliente->email;}?><br>
+                    <strong>Nif: </strong><?php if(isset($cliente)) {echo $cliente->nif;}?><br>
+                    <strong>Telemovel: </strong><?php if(isset($cliente)) {echo $cliente->telefone;}?><br>
+                    <strong>Morada: </strong> <?php if(isset($cliente)) {echo $cliente->morada;}?><br>
+                    <strong>Cod-Postal,Localidade: </strong> <?php if(isset($cliente)) {echo $cliente->codpostal.','.$cliente->localidade;}?><br>
+                    <a href="router.php?c=linhaFatura&a=selectProduto" class="btn btn-primary float-right">Selecionar Produto</a>
+
                 </div>
+                <!-- /.col -->
             </div>
-            <div class="form-group row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Preço</label>
-                <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext" style="color: white;" id="staticEmail" value="<?php echo number_format($produto->preco, 2, '.', ''); ?> €" disabled>
+            <div class="row">
+                <div class="col-12 table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <?php var_dump($produto) ?>
+
+                            <th>Produto</th>
+                            <th>Quantidade</th>
+                            <th>Preço Unidade</th>
+                            <th>Taxa</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr style="color: white">
+                            <td style="display: none" name="id_Produto"><?= $produto->id ?></td>
+                            <td><?= $produto->nome ?></td>
+                            <td><input type="number" min="0" max="<?= $produto->stock ?>"></td>
+                            <td><?= number_format($produto->preco, 2, '.', ''); ?></td>
+                            <td><?= $produto->iva->taxa ?>%</td>
+                            <td><a href="router.php?c=linhaFatura&a=store">Guardar</a></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
                 </div>
-            </div>
-            <div class="form-group row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Iva</label>
-                <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext" style="color: white;" id="staticEmail" value="<?php echo $produto->iva_id->taxaiva ?>" disabled>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Nome do Produto</label>
-                <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext" style="color: white;" id="staticEmail" value="<?php echo $produto->nome ?>" disabled>
-                </div>
-            </div>
         </form>
         <!-- /.col -->
     </div>

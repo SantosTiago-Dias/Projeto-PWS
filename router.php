@@ -7,7 +7,7 @@ require_once './controllers/EmpresaController.php';
 require_once './controllers/FaturaController.php';
 require_once './controllers/IvaController.php';
 require_once './controllers/LinhaFaturaController.php';
-require_once './controllers/ProductsController.php';
+require_once './controllers/ProdutoController.php';
 
 if(!isset($_GET['c'], $_GET['a']))
 {
@@ -128,8 +128,8 @@ else
                     $controller->index();
                     break;
                 case "create":
-
-                    $controller->create();
+                    $id=isset($_GET['id']);
+                    $controller->create($id);
                     break;
 
                 case "store":
@@ -152,16 +152,16 @@ else
             switch ($a)
             {
                 case "create":
-                    $id=$_GET['id'];
+                    $id=isset($_GET['id']);
                     $controller->create($id);
                     break;
-                case "selectProdutos":
+                case "selectProduto":
                     $controller->selectProduto();
                     break;
             }
             break;
-        case "produtos":
-            $controller = new ProductsController();
+        case "produto":
+            $controller = new ProdutoController();
             switch ($a)
             {
                 case "index":

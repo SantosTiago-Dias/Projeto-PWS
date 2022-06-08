@@ -31,10 +31,11 @@
                     <?php
                     foreach ($clientes as $client) { ?>
                     <tr>
+
                         <td style="color: white"><?=$client->username?></td>
                         <td style="color: white"><?=$client->morada?></td>
                         <td style="color: white"><?=$client->localidade?></td>
-                        <td style="color: white"><a href="router.php?c=fatura&a=store&id=<?=$client->id?>" class="btn btn-primary" role="button">Selecionar Cliente</a></td>
+                        <td style="color: white"><a href="router.php?c=fatura&a=create&id=<?=$client->id?>" class="btn btn-primary" role="button">Selecionar Cliente</a></td>
                     </tr>
                     <?php } ?>
 
@@ -48,12 +49,5 @@
 
 
 
-    <!-- this row will not appear when printing -->
-    <div class="row no-print">
-        <div class="col-12">
-            <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
-            <button type="button" class="btn btn-success float-right"> Emitir</button>
-            <button type="button" class="btn btn-danger float-right" style="margin-right: 5px;">Anular</button>
-        </div>
-    </div>
+
 </div>

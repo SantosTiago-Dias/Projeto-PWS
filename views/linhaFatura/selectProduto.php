@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-12">
             <h4>
-                <i class="fas fa-user"></i> Selecione o cliente
+                <i></i> Selecione o Produto
 
             </h4>
         </div>
@@ -24,6 +24,7 @@
                     <th>Nome</th>
                     <th>Stock</th>
                     <th>Preço</th>
+                    <th>Taxa</th>
                     <th></th>
                 </tr>
                 </thead>
@@ -31,12 +32,14 @@
 
 
                     <?php
+
                     foreach ($produtos as $produto) { ?>
                     <tr>
                         <td style="color: white"><?=$produto->id?></td>
                         <td style="color: white"><?=$produto->nome?></td>
                         <td style="color: white"><?=$produto->stock?></td>
                         <td style="color: white"><?= number_format($produto->preco, 2, '.', '');?>€</td>
+                        <td style="color: white"><?=$produto->iva->taxa?></td>
                         <td style="color: white"><a href="router.php?c=linhaFatura&a=create&id=<?=$produto->id?>" class="btn btn-primary" role="button">Selecionar Produto</a></td>
                     </tr>
                     <?php } ?>

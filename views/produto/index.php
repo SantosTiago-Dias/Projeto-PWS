@@ -25,6 +25,7 @@
                     <td style="color: white"><?=$produto->stock?></td>
                     <td style="color: white"><?= number_format($produto->preco, 2, '.', '');?>€</td>
 
+
                 </tr>
             <?php } ?>
 

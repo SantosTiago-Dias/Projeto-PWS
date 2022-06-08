@@ -29,8 +29,9 @@ class BaseController
 
     }
 
-    public function redirectToRoute($controllerPrefix, $action)
+    public function redirectToRoute($controllerPrefix, $action,array $params=[])
     {
+
         header('Location: ./router.php?c=' . $controllerPrefix . '&a=' . $action);
     }
 

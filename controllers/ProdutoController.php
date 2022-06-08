@@ -1,12 +1,14 @@
 <?php
 require_once './controllers/BaseController.php';
 
-class ProductsController extends BaseController
+class ProdutoController extends BaseController
 {
     public function index()
     {
         $auth = new auth();
-        $produtos=Produtos::all();
+        //$produtos=Produto::all();
+        $produtos=Produto::all();
+
         $this->makeView('produto', 'index',['produtos'=>$produtos]);
 
     }
@@ -62,7 +64,7 @@ class ProductsController extends BaseController
         if ($iva->is_valid()) {
             $iva->save();
             //redirecionar para o index
-            echo "aaa";
+
             $this->redirectToRoute('iva', 'index');
         } else {
             $this->makeView('iva', 'edit', ['iva' => $iva]);

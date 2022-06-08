@@ -19,16 +19,29 @@ class LinhaFaturaController extends BaseController
 
     }
 
-    public function create($idProduct)
+    public function create($idProduto)
     {
-        $produto=Produtos::find([$idProduct]);
-        //$idfatura=Fatura::last();
-        //var_dump($idfatura);
-        $this->makeView('linhaFatura', 'create',['produto'=>$produto]);
+        $auth = new Auth();
+        if($auth->isLoggedIn())
+        {
+            $idProduto=$_GET['id'];
+            $fatura=Fatura::last();
+            $cliente=utilizadore::find([$fatura->cliente_id]);
+            $empresa=Empresa::find([$fatura->empresa_id]);
+            $produto=Produto::find([$idProduto]);
+
+            $this->makeView('linhaFatura', 'create',['cliente'=>$cliente,'empresa'=>$empresa,'produto'=>$produto]);
+        }
+        else
+        {
+            $this->makeView('linhaFatura', 'create');
+        }
+
+
 
     }
 
-    public function store($idFatura)
+    public function store()
     {
         //validar Fatura
 
@@ -37,39 +50,20 @@ class LinhaFaturaController extends BaseController
 
     public function edit($idLinhaFatura)
     {
-        $auth = new auth();
-        $empresa = Empresa::find([$id]);
 
-        $nome = $auth->getUsername();
-
-        if ($auth->isLoggedIn()) {
-            $this->makeView('empresa', 'edit', ['empresas' => $empresa, 'nome' => $nome]);
-        } else {
-            $this->redirectToRoute('backend', 'index');
-        }
     }
 
     public function update($id)
     {
-        //find resource (activerecord/model) instance where PK = $id
-        //your form name fields must match the ones of the table fields
-        $auth = new auth();
-        $nome = $auth->getUsername();
-        $attributes = array('nome' => $_POST['nome'], 'email' => $_POST['email'], 'telefone' => $_POST['telefone'], 'nif' => $_POST['nif'], 'morada' => $_POST['morada'], 'codPostal' => $_POST['codPostal'], 'local' => $_POST['local'], 'capSocial' => $_POST['capSocial'], 'descricao' => $_POST['descricao']);
-        $empresa = Empresa::find([$id]);
-        $empresa->update_attributes($_POST);
-        if ($empresa->is_valid()) {
-            $empresa->save();
-            $this->redirectToRoute('empresa', 'index');
-        } else {
-            $this->makeView('empresa', 'edit', ['empresas' => $empresa, 'nome' => $nome]);
-        }
+
     }
 
     public function selectProduto()
     {
         $auth= new auth();
-        $produtos=Produtos::all();
+        $produtos=Produto::all();
+        //var_dump($produtos->iva->taxa); buscar o valor a tabela id
+
         $this->makeView('linhaFatura', 'selectProduto',['produtos'=>$produtos]);
     }
 
