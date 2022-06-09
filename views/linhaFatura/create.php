@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-12">
             <h4>
-                <i class="fas fa-globe"></i> Fatura Nª xxxx
+                <i class="fas fa-globe"></i> Fatura Nª <?=$fatura->id?>
                 <small class="float-right">Date: XXX</small>
             </h4>
         </div>
@@ -16,7 +16,7 @@
     <div class="row">
 
         <!-- accepted payments column -->
-        <form>
+
             <div class="row invoice-info">
                 <div class="col-sm-4 invoice-col">
                     <b>Empresa:</b><br>
@@ -48,18 +48,17 @@
                     <strong>Telemovel: </strong><?php if(isset($cliente)) {echo $cliente->telefone;}?><br>
                     <strong>Morada: </strong> <?php if(isset($cliente)) {echo $cliente->morada;}?><br>
                     <strong>Cod-Postal,Localidade: </strong> <?php if(isset($cliente)) {echo $cliente->codpostal.','.$cliente->localidade;}?><br>
-                    <a href="router.php?c=linhaFatura&a=selectProduto" class="btn btn-primary float-right">Selecionar Produto</a>
+                    <a href="router.php?c=linhaFatura&a=selectProduto&idFatura=<?= $fatura->id ?>" class="btn btn-primary float-right">Selecionar Produto</a>
 
                 </div>
                 <!-- /.col -->
             </div>
             <div class="row">
                 <div class="col-12 table-responsive">
+                    <form action="router.php?c=linhaFatura&a=store&idFatura=<?= $fatura->id ?>&idProduto=<?php if(isset($produto)){ echo $produto->id;}?>" method="POST">
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <?php var_dump($produto) ?>
-
                             <th>Produto</th>
                             <th>Quantidade</th>
                             <th>Preço Unidade</th>
@@ -67,21 +66,47 @@
                             <th></th>
                         </tr>
                         </thead>
-                        <tbody>
 
-                        <tr style="color: white">
-                            <td style="display: none" name="id_Produto"><?= $produto->id ?></td>
-                            <td><?= $produto->nome ?></td>
-                            <td><input type="number" min="0" max="<?= $produto->stock ?>"></td>
-                            <td><?= number_format($produto->preco, 2, '.', ''); ?></td>
-                            <td><?= $produto->iva->taxa ?>%</td>
-                            <td><a href="router.php?c=linhaFatura&a=store">Guardar</a></td>
-                        </tr>
+                        <tbody>
+                            <?php
+
+                            foreach ($linhafatura as $linhaFaturas) { ?>
+                                <tr style="color: white">
+
+                                    <td style="display: none" name="id_Produto"><?= $linhaFaturas->id ?> ></td>
+                                    <td><?= $linhaFaturas->produto->nome ?></td>
+                                    <td><?= $linhaFaturas->quantidade ?></td>
+                                    <td><?= $linhaFaturas->valor ?></td>
+                                    <td><?= $linhaFaturas->valor_iva ?></td>
+
+
+                                    <td><i class="fas fa-pen"></i></td>
+
+
+                                </tr>
+                            <?php   }?>
+
+                            <?php if(isset($produto)) {?>
+                                <tr style="color: white">
+
+                                    <td style="display: none" name="id_Produto"><input type="text" name="id" value="<?= $produto->id ?>" ></td>
+                                    <td><input style="color: black"  type="text" name="nome" value="<?= $produto->nome ?>" readonly  ></td>
+                                    <td><input type="number" name="quantidade" min="0" max="<?= $produto->stock ?>" required></td>
+                                    <td><input style="color: black" type="number" name="preco" value="<?= $produto->preco ?>" ></td>
+                                    <td ><input style="color: black" type="text" name="taxa" value="<?= $produto->iva->taxa ?>">%</td>
+                                    <td><button type="submit" class="btn btn-success"><i class="fas fa-check"></i></button> <a class="btn btn-danger" href="router.php?c=linhaFatura&a=create&idFatura=<?= $fatura->id ?>"><i class="fa-solid fa-x"></i></a></td>
+                                    <td></td>
+                                </tr>
+
+                            <?php } ?>
+
 
                         </tbody>
                     </table>
+                    </form>
+
                 </div>
-        </form>
+
         <!-- /.col -->
     </div>
     <!-- /.row -->

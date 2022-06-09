@@ -22,7 +22,7 @@
     <script src="./public/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="./public/dist/js/demo.js"></script>
-
+    <script src="https://kit.fontawesome.com/9646161aa2.js" crossorigin="anonymous"></script>
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 

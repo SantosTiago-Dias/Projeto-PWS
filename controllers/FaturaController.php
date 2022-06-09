@@ -50,7 +50,7 @@ class FaturaController extends BaseController
         if ($fatura->is_valid()) {
 
             $fatura->save();
-            $this->redirectToRoute('linhaFatura', 'create',['fatura'=>$fatura->id]);
+            $this->redirectToRoute('linhaFatura', 'create',['idFatura'=>$fatura->id]);
         } else {
             $this->makeView('fatura', 'create');
         }

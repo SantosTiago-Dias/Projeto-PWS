@@ -31,8 +31,19 @@ class BaseController
 
     public function redirectToRoute($controllerPrefix, $action,array $params=[])
     {
+        //extract($params);
+        var_dump($params);
 
-        header('Location: ./router.php?c=' . $controllerPrefix . '&a=' . $action);
+
+        if ($params != "")
+        {
+            header('Location: ./router.php?c=' . $controllerPrefix . '&a=' . $action .'&'.http_build_query($params, ' ', '&amp;'));
+        }
+        else
+        {
+            header('Location: ./router.php?c=' . $controllerPrefix . '&a=' . $action);
+        }
+
     }
 
 

@@ -2,23 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40439ba3-e6c1-4627-8317-f0ba04f292a9" name="Changes" comment="so para ter certeza">
-      <change afterPath="$PROJECT_DIR$/views/fatura/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/LinhaFatura.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/BaseAuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/BaseAuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/BaseController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/FaturaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/FaturaController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/LinhaFaturaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/LinhaFaturaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ProdutoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Produtos.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/Produto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Stocks.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/Stock.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Utilizadores.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/Utilizadore.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/router.php" beforeDir="false" afterPath="$PROJECT_DIR$/router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/fatura/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/fatura/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/fatura/selectClient.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/fatura/selectClient.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layout/header_Back.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/layout/header_Back.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/linhaFatura/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/linhaFatura/create.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/linhaFatura/selectProduto.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/linhaFatura/selectProduto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/produto/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/produto/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,20 +82,21 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/Icons" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Projeto PWC\public\Icons" />
       <recent name="C:\wamp64\www\Projeto PWC\views" />
       <recent name="C:\wamp64\www\Projeto PWC\vendor" />
       <recent name="C:\wamp64\www\Projeto PWC\views\fatura" />
       <recent name="C:\wamp64\www\Projeto PWC\views\iva" />
-      <recent name="C:\wamp64\www\Projeto PWC\views\empresa" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Projeto PWC\public\Icons" />
       <recent name="C:\wamp64\www\Projeto PWC\vendor" />
       <recent name="C:\wamp64\www\Projeto PWC\public" />
     </key>
@@ -140,7 +133,9 @@
       <workItem from="1654470847915" duration="597000" />
       <workItem from="1654517374683" duration="10482000" />
       <workItem from="1654682834660" duration="6871000" />
-      <workItem from="1654698713662" duration="4971000" />
+      <workItem from="1654698713662" duration="7751000" />
+      <workItem from="1654721207148" duration="703000" />
+      <workItem from="1654749241991" duration="7098000" />
     </task>
     <task id="LOCAL-00001" summary="login Funciona">
       <created>1653591013016</created>
@@ -233,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654528336062</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="so para ter certeza">
+      <created>1654703823328</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1654703823328</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

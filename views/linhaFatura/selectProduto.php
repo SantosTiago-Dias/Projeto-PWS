@@ -33,16 +33,17 @@
 
                     <?php
 
-                    foreach ($produtos as $produto) { ?>
+                    foreach ($produtos as $produto) {
+                        if ($produto->stock>0) {?>
                     <tr>
                         <td style="color: white"><?=$produto->id?></td>
                         <td style="color: white"><?=$produto->nome?></td>
                         <td style="color: white"><?=$produto->stock?></td>
                         <td style="color: white"><?= number_format($produto->preco, 2, '.', '');?>€</td>
                         <td style="color: white"><?=$produto->iva->taxa?></td>
-                        <td style="color: white"><a href="router.php?c=linhaFatura&a=create&id=<?=$produto->id?>" class="btn btn-primary" role="button">Selecionar Produto</a></td>
+                        <td style="color: white"><a href="router.php?c=linhaFatura&a=create&idFatura=<?=$fatura->id?>&idProduto=<?=$produto->id?>" class="btn btn-primary" role="button">Selecionar Produto</a></td>
                     </tr>
-                    <?php } ?>
+                    <?php } } ?>
 
 
                 </tbody>

@@ -152,11 +152,18 @@ else
             switch ($a)
             {
                 case "create":
-                    $id=isset($_GET['id']);
-                    $controller->create($id);
+                    $idFatura=$_GET['idFatura'];
+                    $idProduto=isset($_GET['idProduto']);
+                    $controller->create($idFatura,$idProduto);
                     break;
                 case "selectProduto":
-                    $controller->selectProduto();
+                    $idFatura=$_GET['idFatura'];
+                    $controller->selectProduto($idFatura);
+                    break;
+                case "store":
+                    $idFatura=$_GET['idFatura'];
+                    $idProduto=$_GET['idProduto'];
+                    $controller->store($idFatura,$idProduto);
                     break;
             }
             break;
