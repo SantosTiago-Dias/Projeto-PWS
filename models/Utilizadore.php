@@ -6,4 +6,8 @@ class utilizadore extends \ActiveRecord\Model
         array('username'),
         array('password')
     );
+
+    static $has_many  = array(
+        array('fatura')
+    );
 }

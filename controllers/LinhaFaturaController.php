@@ -13,9 +13,22 @@ class LinhaFaturaController extends BaseController
 
     }
 
-    public function show()
+    public function show($idFatura)
     {
+        $auth = new Auth();
+        $fatura=Fatura::find([$idFatura]);// vai buscar os dados da fatura
+        $cliente=utilizadore::find([$fatura->cliente_id]);//dados do clinte
+        $empresa=Empresa::find([$fatura->empresa_id]);//dados da empresa
+        $linhaFatura=Linhafatura::find('all',['fatura_id'=>$idFatura]);
 
+        if($auth->isLoggedIn())
+        {
+            $this->makeView('linhaFatura', 'show',['linhafatura'=>$linhaFatura,'fatura'=>$fatura,'cliente'=>$cliente,'empresa'=>$empresa]);
+        }
+        else
+        {
+            $this->makeView('linhaFatura', 'show',['linhafatura'=>$linhaFatura,'fatura'=>$fatura,'cliente'=>$cliente,'empresa'=>$empresa]);
+        }
 
     }
 
@@ -68,8 +81,27 @@ class LinhaFaturaController extends BaseController
         //redirect linha fatura create(idFatura)
     }
 
-    public function edit($idLinhaFatura)
+    public function edit($idFatura,$idProduto)
     {
+        $auth = new Auth();
+        $fatura=Fatura::find([$idFatura]);// vai buscar os dados da fatura
+        $cliente=utilizadore::find([$fatura->cliente_id]);//dados do clinte
+        $empresa=Empresa::find([$fatura->empresa_id]);//dados da empresa
+        $linhaFatura=Linhafatura::find('all',['fatura_id'=>$idFatura]);
+
+        if($auth->isLoggedIn() && $idProduto==true)
+        {
+            $idProduto=$_GET['idProduto'];
+
+            $produto=Produto::find([$idProduto]);
+
+
+            $this->makeView('linhaFatura', 'edit',['linhafatura'=>$linhaFatura,'fatura'=>$fatura,'cliente'=>$cliente,'empresa'=>$empresa,'produto'=>$produto]);
+        }
+        else
+        {
+            $this->makeView('linhaFatura', 'edit',['linhafatura'=>$linhaFatura,'fatura'=>$fatura,'cliente'=>$cliente,'empresa'=>$empresa]);
+        }
 
     }
 
@@ -78,13 +110,14 @@ class LinhaFaturaController extends BaseController
 
     }
 
-    public function selectProduto($idFatura)
+    public function selectProduto($idFatura,$rota)
     {
-        $auth= new auth();
+
+
         $produtos=Produto::all();
         //var_dump($produtos->iva->taxa); buscar o valor a tabela id
         $fatura=Fatura::find([$idFatura]);// vai buscar os dados da fatura
-        $this->makeView('linhaFatura', 'selectProduto',['fatura'=>$fatura,'produtos'=>$produtos]);
+        $this->makeView('linhaFatura', 'selectProduto',['fatura'=>$fatura,'produtos'=>$produtos,'rota'=>$rota]);
     }
 
 }

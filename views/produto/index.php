@@ -22,7 +22,11 @@
                 <tr>
                     <td style="color: white"><?=$produto->id?></td>
                     <td style="color: white"><?=$produto->nome?></td>
-                    <td style="color: white"><?=$produto->stock?></td>
+                    <?php if($produto->stock==0) {
+                        echo '<td style="color: white;background-color: red">'.$produto->stock.'</td>';
+                    } else{
+                        echo '<td style="color: white;">'.$produto->stock.'</td>';
+                    }?>
                     <td style="color: white"><?= number_format($produto->preco, 2, '.', '');?>€</td>
 
 

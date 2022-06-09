@@ -48,14 +48,14 @@
                     <strong>Telemovel: </strong><?php if(isset($cliente)) {echo $cliente->telefone;}?><br>
                     <strong>Morada: </strong> <?php if(isset($cliente)) {echo $cliente->morada;}?><br>
                     <strong>Cod-Postal,Localidade: </strong> <?php if(isset($cliente)) {echo $cliente->codpostal.','.$cliente->localidade;}?><br>
-                    <a href="router.php?c=linhaFatura&a=selectProduto&rota=create&idFatura=<?= $fatura->id ?>" class="btn btn-primary float-right">Selecionar Produto</a>
+                    <a href="router.php?c=linhaFatura&a=selectProduto&rota=edit&rota=edit&idFatura=<?= $fatura->id ?>" class="btn btn-primary float-right">Selecionar Produto</a>
 
                 </div>
                 <!-- /.col -->
             </div>
             <div class="row">
                 <div class="col-12 table-responsive">
-                    <form action="router.php?c=linhaFatura&a=store&idFatura=<?= $fatura->id ?>&idProduto=<?php if(isset($produto)){ echo $produto->id;}?>" method="POST">
+
                     <table class="table table-striped">
                         <thead>
                         <tr>
@@ -73,14 +73,17 @@
                             foreach ($linhafatura as $linhaFaturas) { ?>
                                 <tr style="color: white">
 
-                                    <td style="display: none" name="id_Produto"><?= $linhaFaturas->id ?> ></td>
-                                    <td><?= $linhaFaturas->produto->nome ?></td>
-                                    <td><?= $linhaFaturas->quantidade ?></td>
-                                    <td><?= $linhaFaturas->valor ?></td>
-                                    <td><?= $linhaFaturas->valor_iva ?></td>
+
+                                    <td style="display: none" name="id_Produto"><input type="text" name="id" value="<?= $linhaFaturas->id ?> >" ></td>
+                                    <td><input style="color: black"  type="text" name="nome" value="<?= $linhaFaturas->produto->nome ?>" readonly  ></td>
+                                    <td><input type="number" name="quantidade" min="0" max="<?= $linhaFaturas->quantidade ?>" value="<?= $linhaFaturas->quantidade ?>" required></td>
+                                    <td><input style="color: black" type="number" name="preco" value="<?= $linhaFaturas->valor ?>" readonly></td>
+                                    <td ><input style="color: black" type="text" name="taxa" value="<?= $linhaFaturas->valor_iva ?>" readonly>%</td>
+                                    <td><a type="submit" href="router.php?c=linhaFatura&a=update&idFatura=<?= $fatura->id ?>&idProduto=<?= $linhaFaturas->produto_id ?>" class="btn btn-success"><i class="fas fa-check"></i></a> <a class="btn btn-danger" href="router.php?c=linhaFatura&a=deleteProduct&idFatura=<?= $fatura->id ?>&idProduto=<?= $linhaFaturas->produto_id ?>"><i class="fa-solid fa-x"></i></a></td>
+                                    <td></td>
 
 
-                                    <td><i class="fas fa-pen"></i></td>
+
 
 
                                 </tr>
@@ -94,7 +97,7 @@
                                     <td><input type="number" name="quantidade" min="0" max="<?= $produto->stock ?>" required></td>
                                     <td><input style="color: black" type="number" name="preco" value="<?= $produto->preco ?>" ></td>
                                     <td ><input style="color: black" type="text" name="taxa" value="<?= $produto->iva->taxa ?>">%</td>
-                                    <td><button type="submit" class="btn btn-success"><i class="fas fa-check"></i></button> <a class="btn btn-danger" href="router.php?c=linhaFatura&a=create&idFatura=<?= $fatura->id ?>"><i class="fa-solid fa-x"></i></a></td>
+                                    <td><button type="submit" class="btn btn-success"><i class="fas fa-check"></i></button> <a class="btn btn-danger" href="router.php?c=linhaFatura&a=edit&idFatura=<?= $fatura->id ?>"><i class="fa-solid fa-x"></i></a></td>
                                     <td></td>
                                 </tr>
 
@@ -103,7 +106,15 @@
 
                         </tbody>
                     </table>
-                    </form>
+                        <div class="row no-print">
+                            <div class="col-12">
+                                <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
+
+
+                                <button type="button" class="btn btn-danger float-right" style="margin-right: 5px;">Anular Fatura1</button>
+                            </div>
+                        </div>
+
 
                 </div>
 
@@ -112,11 +123,5 @@
     <!-- /.row -->
 
     <!-- this row will not appear when printing -->
-    <div class="row no-print">
-        <div class="col-12">
-            <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
-            <button type="button" class="btn btn-success float-right"> Emitir</button>
-            <button type="button" class="btn btn-danger float-right" style="margin-right: 5px;">Anular</button>
-        </div>
-    </div>
+
 </div>

@@ -32,7 +32,7 @@ class IvaController extends BaseController
 
     public function store()
     {
-        $attributes = array('taxaIva' => $_POST['iva'], 'descricao' => $_POST['descricao'],'status'=>'1');
+        $attributes = array('taxa' => $_POST['iva'], 'descricao' => $_POST['descricao'],'status'=>'1');
         $iva= new Iva($attributes);
         if ($iva->is_valid()) {
 
@@ -57,7 +57,7 @@ class IvaController extends BaseController
     public function update($id)
     {
 
-        $attributes = array('taxaIva' => $_POST['iva'], 'descricao' => $_POST['descricao']);
+        $attributes = array('taxa' => $_POST['iva'], 'descricao' => $_POST['descricao']);
         $iva = Iva::Find([$id]);
 
         $iva->update_attributes($attributes);

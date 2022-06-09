@@ -11,10 +11,13 @@
                 ?>
                 <form action="./router.php?c=login&a=login" method="post">
                     <label for="name">Nome</label>
-                    <input class="form-control" type="text" id="name" name="name"><br>
+                    <input style="color: black !important;" class="form-control" type="text" id="name" name="name" ><br>
                     <label for="password">Password</label>
                     <input class="form-control" type="password" id="password" name="password">
-                    <input class="btn btn-primary" type="submit">
+                    <br>
+                    <button class="btn btn-primary" type="submit">Login</button>
+
+
                 </form>
             </div>
             <div class="col"></div>

@@ -3,7 +3,7 @@
         <div class="mb-3" >
             <label for="exampleFormControlInput1" class="form-label">Taxa de Iva</label>
             <input type="text" id="empresa" class="form-control" name="iva" value="<?php if(isset($iva)) { echo
-            $iva->taxaiva; }?>">
+            $iva->taxa; }?>">
         </div>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Descricao:</label>
@@ -13,6 +13,6 @@
 
         <a href="router.php?c=iva&a=index"
            class="btn btn-danger" role="button">Voltar atras</a>
-        <button class="btn btn-info">Criar Iva</button>
+        <button class="btn btn-info">Editar Iva</button>
     </form>
 </div>

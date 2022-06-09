@@ -20,7 +20,7 @@
                 <?php foreach ($ivas as $iva) { ?>
             <tr>
                 <td style="color: white"><?=$iva->id?></td>
-                <td style="color: white"><?=$iva->taxaiva?></td>
+                <td style="color: white"><?=$iva->taxa?></td>
                 <td style="color: white"><?=$iva->descricao?></td>
                 <?php if ($iva->status== '1')
                     {

@@ -154,11 +154,23 @@ else
                 case "create":
                     $idFatura=$_GET['idFatura'];
                     $idProduto=isset($_GET['idProduto']);
+
                     $controller->create($idFatura,$idProduto);
+                    break;
+                case "show":
+                    $idFatura=$_GET['idFatura'];
+                    $controller->show($idFatura);
                     break;
                 case "selectProduto":
                     $idFatura=$_GET['idFatura'];
-                    $controller->selectProduto($idFatura);
+                    $rota=$_GET['rota'];
+                    $controller->selectProduto($idFatura,$rota);
+                    break;
+                case "edit":
+                    $idFatura=$_GET['idFatura'];
+                    $idProduto=isset($_GET['idProduto']);
+
+                    $controller->edit($idFatura,$idProduto);
                     break;
                 case "store":
                     $idFatura=$_GET['idFatura'];

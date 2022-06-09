@@ -41,7 +41,7 @@
                         <td style="color: white"><?=$produto->stock?></td>
                         <td style="color: white"><?= number_format($produto->preco, 2, '.', '');?>€</td>
                         <td style="color: white"><?=$produto->iva->taxa?></td>
-                        <td style="color: white"><a href="router.php?c=linhaFatura&a=create&idFatura=<?=$fatura->id?>&idProduto=<?=$produto->id?>" class="btn btn-primary" role="button">Selecionar Produto</a></td>
+                        <td style="color: white"><a href="router.php?c=linhaFatura&a=<?= $rota ?>&idFatura=<?=$fatura->id?>&idProduto=<?=$produto->id?>" class="btn btn-primary" role="button">Selecionar Produto</a></td>
                     </tr>
                     <?php } } ?>
 

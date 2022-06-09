@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40439ba3-e6c1-4627-8317-f0ba04f292a9" name="Changes" comment="so para ter certeza">
-      <change afterPath="$PROJECT_DIR$/models/LinhaFatura.php" afterDir="false" />
+    <list default="true" id="40439ba3-e6c1-4627-8317-f0ba04f292a9" name="Changes" comment="produtos">
+      <change afterPath="$PROJECT_DIR$/views/linhaFatura/edit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/linhaFatura/show.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/BaseController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/FaturaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/FaturaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/IvaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/IvaController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/LinhaFaturaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/LinhaFaturaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/Auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Fatura.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/Fatura.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Iva.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/Iva.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/LinhaFatura.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/LinhaFatura.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Utilizadore.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/Utilizadore.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/router.php" beforeDir="false" afterPath="$PROJECT_DIR$/router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/fatura/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/fatura/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/iva/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/iva/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/iva/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/iva/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/layout/header_Back.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/layout/header_Back.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/linhaFatura/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/linhaFatura/create.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/linhaFatura/selectProduto.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/linhaFatura/selectProduto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/login/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/login/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/produto/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/produto/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,18 +93,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/Icons" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/views/linhaFatura" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Projeto PWC\views\linhaFatura" />
       <recent name="C:\wamp64\www\Projeto PWC\public\Icons" />
       <recent name="C:\wamp64\www\Projeto PWC\views" />
       <recent name="C:\wamp64\www\Projeto PWC\vendor" />
       <recent name="C:\wamp64\www\Projeto PWC\views\fatura" />
-      <recent name="C:\wamp64\www\Projeto PWC\views\iva" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\Projeto PWC\public\Icons" />
@@ -135,7 +146,11 @@
       <workItem from="1654682834660" duration="6871000" />
       <workItem from="1654698713662" duration="7751000" />
       <workItem from="1654721207148" duration="703000" />
-      <workItem from="1654749241991" duration="7098000" />
+      <workItem from="1654749241991" duration="7533000" />
+      <workItem from="1654769927959" duration="4937000" />
+      <workItem from="1655077553114" duration="657000" />
+      <workItem from="1655254009055" duration="5996000" />
+      <workItem from="1655288238030" duration="6869000" />
     </task>
     <task id="LOCAL-00001" summary="login Funciona">
       <created>1653591013016</created>
@@ -235,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654703823328</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Faturas adcionar feito">
+      <created>1654756732947</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1654756732947</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,6 +279,8 @@
     <MESSAGE value="login Funciona" />
     <MESSAGE value="Template dash" />
     <MESSAGE value="so para ter certeza" />
-    <option name="LAST_COMMIT_MESSAGE" value="so para ter certeza" />
+    <MESSAGE value="Faturas adcionar feito" />
+    <MESSAGE value="produtos" />
+    <option name="LAST_COMMIT_MESSAGE" value="produtos" />
   </component>
 </project>

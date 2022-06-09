@@ -172,7 +172,7 @@
                         </a>
                         <ul class="nav nav">
                             <li class="nav-item">
-                                <a href="./public/index.html" class="nav-link">
+                                <a href="router.php?c=produto&a=index" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Produtos</p>
                                 </a>

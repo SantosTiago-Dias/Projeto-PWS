@@ -5,7 +5,7 @@ class Auth
 {
     public function checkLogin($username, $password)
     {
-        $user = utilizadores::find_by_username([$username]);
+        $user = utilizadore::find_by_username([$username]);
         $pass=$user->password;
         $nome=$user->username;
         if($username == $nome && $password == $pass)
