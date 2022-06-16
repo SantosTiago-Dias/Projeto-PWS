@@ -1,21 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="40439ba3-e6c1-4627-8317-f0ba04f292a9" name="Changes" comment="editar fatura a meio">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/FaturaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/FaturaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/LinhaFaturaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/LinhaFaturaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Utilizadore.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/Utilizadore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router.php" beforeDir="false" afterPath="$PROJECT_DIR$/router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/cliente/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/cliente/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/cliente/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/cliente/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/fatura/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/fatura/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/fatura/selectClient.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/fatura/selectClient.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/linhaFatura/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/linhaFatura/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/linhaFatura/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/linhaFatura/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/linhaFatura/selectProduto.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/linhaFatura/selectProduto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/linhaFatura/show.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/linhaFatura/show.php" afterDir="false" />
-    </list>
+    <list default="true" id="40439ba3-e6c1-4627-8317-f0ba04f292a9" name="Changes" comment="Funcionarios" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
