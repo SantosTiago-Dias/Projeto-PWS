@@ -1,4 +1,4 @@
-<div class="invoice p-3 mb-3" style="margin-left: 13%">
+<div class="invoice p-3 mb-3" style="margin-left: 16%">
     <!-- title row -->
     <div class="row">
         <div class="col-12">
@@ -108,10 +108,9 @@
                     </table>
                         <div class="row no-print">
                             <div class="col-12">
-                                <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
+                                <a href="router.php?c=linhaFatura&a=index" class="btn btn-primary float-right" style="margin-right: 5px;">Voltar atras</a>
+                                <a href="router.php?c=fatura&a=index" class="btn btn-danger float-right" style="margin-right: 5px;">Anular Fatura</a>
 
-
-                                <button type="button" class="btn btn-danger float-right" style="margin-right: 5px;">Anular Fatura1</button>
                             </div>
                         </div>
 

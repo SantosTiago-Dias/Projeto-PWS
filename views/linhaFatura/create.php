@@ -1,4 +1,4 @@
-<div class="invoice p-3 mb-3" style="margin-left: 13%">
+<div class="invoice p-3 mb-3" style="margin-left: 16%">
     <!-- title row -->
     <div class="row">
         <div class="col-12">
@@ -70,14 +70,14 @@
                         <tbody>
                             <?php
 
-                            foreach ($linhafatura as $linhaFaturas) { ?>
+                            foreach ($linhafaturas as $linhaFatura) { ?>
                                 <tr style="color: white">
 
-                                    <td style="display: none" name="id_Produto"><?= $linhaFaturas->id ?> ></td>
-                                    <td><?= $linhaFaturas->produto->nome ?></td>
-                                    <td><?= $linhaFaturas->quantidade ?></td>
-                                    <td><?= $linhaFaturas->valor ?></td>
-                                    <td><?= $linhaFaturas->valor_iva ?></td>
+                                    <td style="display: none" name="id_Produto"><?= $linhaFatura->id ?> ></td>
+                                    <td><?= $linhaFatura->produto->nome ?></td>
+                                    <td><?= $linhaFatura->quantidade ?></td>
+                                    <td><?= $linhaFatura->produto->preco ?></td>
+                                    <td><?= $linhaFatura->produto->iva->taxa ?></td>
 
 
                                     <td><i class="fas fa-pen"></i></td>
@@ -110,7 +110,38 @@
         <!-- /.col -->
     </div>
     <!-- /.row -->
+        <div class="row">
+            <!-- accepted payments column -->
+            <div class="col-6">
 
+            </div>
+            <!-- /.col -->
+            <div class="col-6">
+
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <tr>
+                            <th style="width:50%">Subtotal:</th>
+                            <td></td>
+
+
+                        </tr>
+                        <tr>
+                            <th>Iva</th>
+                            <td><?= $fatura->ivatotal ?></td>
+                        </tr>
+                        <tr>
+                            <th>Total:</th>
+                            <td><?= $fatura->valortotal ?></td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
     <!-- this row will not appear when printing -->
     <div class="row no-print">
         <div class="col-12">

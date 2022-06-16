@@ -46,7 +46,7 @@ class FaturaController extends BaseController
         $dt = date_create('now');
 
         $funcionario=Utilizadore::find(['username'=>$nome]);
-        $attributes=array('dtafatura'=> $dt,'Cliente_id'=>$idClient,'Funcionario_id'=>$funcionario->id,'Empresa_id'=>1,'status'=>'1');
+        $attributes=array('dtafatura'=> $dt,'cliente_id'=>$idClient,'utilizadore_id'=>$funcionario->id,'empresa_id'=>1,'status'=>'0');
         $fatura= new Fatura($attributes);
 
         if ($fatura->is_valid()) {
@@ -55,7 +55,7 @@ class FaturaController extends BaseController
             $this->redirectToRoute('linhaFatura', 'create',['idFatura'=>$fatura->id]);
         } else {
 
-            //$this->redirectToRoute('fatura', 'create');
+            $this->redirectToRoute('fatura', 'create');
         }
     }
 

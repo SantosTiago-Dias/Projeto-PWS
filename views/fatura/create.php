@@ -54,7 +54,7 @@
         <div class="row no-print">
             <div class="col-12">
                 <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
-                <a href="router.php?c=fatura&a=store&id=<?= $cliente->id?>" class="btn btn-success float-right" style="margin-right: 5px;"><i class="fas fa-print"></i> Emitir</a>
+                <a href="router.php?c=fatura&a=index" class="btn btn-success float-right" style="margin-right: 5px;"><i class="fas fa-print"></i> Ver faturas</a>
                 <button type="button" class="btn btn-danger float-right" style="margin-right: 5px;">Anular</button>
 
             </div>

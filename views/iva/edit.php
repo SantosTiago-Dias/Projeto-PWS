@@ -1,4 +1,4 @@
-<div style="margin-left: 14%;">
+<div style="margin-left: 16%;">
     <form action="router.php?c=iva&a=update&id=<?=$iva->id?>" method="post">
         <div class="mb-3" >
             <label for="exampleFormControlInput1" class="form-label">Taxa de Iva</label>

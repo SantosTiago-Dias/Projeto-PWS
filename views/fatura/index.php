@@ -1,4 +1,4 @@
-<div style="margin-left: 14%;">
+<div style="margin-left: 16%;">
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -25,7 +25,8 @@
                         <tr>
                             <th>NºFatura</th>
                             <th>Nome Cliente</th>
-                            <th>Nome Funcinario</th>
+                            <th>Nome cliente</th>
+                            <th>Valor</th>
                             <th>Status</th>
                             <th></th>
                         </tr>
@@ -35,8 +36,10 @@
                         <tbody>
                         <tr>
                             <td><?= $fatura->id ?></td>
-                            <td><?= $fatura->dtafatura ?></td>
                             <td><?= $fatura->cliente->username ?></td>
+                            <td><?= $fatura->dtafatura->format('Y-m-d H:i:s') ?></td>
+                            <td><?= $fatura->valortotal?></td>
+
 
                             <td>
                             <?php

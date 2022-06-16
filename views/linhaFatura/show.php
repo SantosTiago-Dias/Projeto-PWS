@@ -1,4 +1,4 @@
-<div class="invoice p-3 mb-3" style="margin-left: 13%">
+<div class="invoice p-3 mb-3" style="margin-left: 16%">
     <!-- title row -->
     <div class="row">
         <div class="col-12">

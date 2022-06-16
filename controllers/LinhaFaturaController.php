@@ -47,11 +47,11 @@ class LinhaFaturaController extends BaseController
             $produto=Produto::find([$idProduto]);
 
 
-            $this->makeView('linhaFatura', 'create',['linhafatura'=>$linhaFatura,'fatura'=>$fatura,'cliente'=>$cliente,'empresa'=>$empresa,'produto'=>$produto]);
+            $this->makeView('linhaFatura', 'create',['linhafaturas'=>$linhaFatura,'fatura'=>$fatura,'cliente'=>$cliente,'empresa'=>$empresa,'produto'=>$produto]);
         }
         else
         {
-            $this->makeView('linhaFatura', 'create',['linhafatura'=>$linhaFatura,'fatura'=>$fatura,'cliente'=>$cliente,'empresa'=>$empresa]);
+            $this->makeView('linhaFatura', 'create',['linhafaturas'=>$linhaFatura,'fatura'=>$fatura,'cliente'=>$cliente,'empresa'=>$empresa]);
         }
 
 
@@ -62,21 +62,58 @@ class LinhaFaturaController extends BaseController
     {
         //validar Fatura
         $quantidade=$_POST['quantidade'];
-        $produto= Produto::find([$idProduto]);
-        $res=$produto->stock-$quantidade;
-        $valor=$quantidade*$_POST['preco'];
-        $valor_Iva=($valor/100)*0.+$_POST['taxa'];
-        $precoTotal=$valor+$valor_Iva;
-        $values=array('quantidade'=>$quantidade,'valor'=>$valor,'valor_iva'=>$valor_Iva,'Fatura_id'=>$idFatura,'Produto_id'=>$idProduto,'status'=>1);
+        $produto= Produto::find([$idProduto]);//vai buscar o produto
+        $res=$produto->stock-$quantidade;//calcula o stock que vai ficar no produto
+        //iva
+        $valoriva=$_POST['taxa']/100;
+        $iva=$_POST['preco']*$valoriva;
+        //preco com iva
+        $precoiva=$_POST['preco']+$iva;
+        $valor=$precoiva*$quantidade;
+        //vai procurar a fatura
+        $fatura=Fatura::find([$idFatura]);
+        $values=array('quantidade'=>$quantidade,'valor'=>$_POST['preco'],'valor_iva'=>$precoiva,'fatura_id'=>$idFatura,'produto_id'=>$idProduto,'status'=>1);
+        $exits= Linhafatura::exists(['fatura_id'=>$idFatura,'produto_id'=>$idProduto]);
 
-        $linhaFatura= new Linhafatura($values);
-        if ($linhaFatura->is_valid()) {
-            $produto->update_attributes(['stock'=>$res]);
-            $linhaFatura->save();
-            $this->redirectToRoute('linhaFatura', 'create',['idFatura'=>$idFatura]);
-        } else {
-            $this->makeView('fatura', 'create');
+        //calcula o iva e o valor
+        $calcvalor=$fatura->valortotal+$valor;
+        $calciva=$fatura->ivatotal+$iva;
+
+        //verifca se a linha de fatura existe
+        if ($exits == false)
+        {
+            $linhaFatura= new Linhafatura($values);
+            if ($linhaFatura->is_valid()) {
+                $produto->update_attributes(['stock'=>$res]);
+                $fatura->update_attributes(['valortotal'=>$calcvalor,'ivatotal'=>$calciva]);
+                var_dump($fatura);
+
+                $linhaFatura->save();
+                $this->redirectToRoute('linhaFatura', 'create',['idFatura'=>$idFatura]);
+            }else {
+                $this->makeView('fatura', 'create');
+            }
         }
+        else
+        {
+
+            $linhafaturaexistente=Linhafatura::find(['fatura_id'=>$idFatura,'produto_id'=>$idProduto]);
+            $nproduto=$linhafaturaexistente->quantidade+$quantidade;
+            $linhafaturaexistente->update_attributes(['quantidade'=>$nproduto]);
+             if ($linhafaturaexistente->is_valid()) {
+                 $produto->update_attributes(['stock'=>$res]);
+                 $fatura->update_attributes(['valortotal'=>$calcvalor,'ivatotal'=>$calciva]);
+                 $linhafaturaexistente->save();
+                 $this->redirectToRoute('linhaFatura', 'create',['idFatura'=>$idFatura]);
+             }else {
+                 $this->makeView('fatura', 'create');
+             }
+            $linhafaturaexistente->save();
+
+
+        }
+
+       /*  */
 
         //redirect linha fatura create(idFatura)
     }
