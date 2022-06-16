@@ -55,7 +55,7 @@
             </div>
             <div class="row">
                 <div class="col-12 table-responsive">
-                    <form action="router.php?c=linhaFatura&a=store&idFatura=<?= $fatura->id ?>&idProduto=<?php if(isset($produto)){ echo $produto->id;}?>" method="POST">
+                    <form action="router.php?c=linhaFatura&a=store&idFatura=<?= $fatura->id ?>&idProduto=<?php if(isset($produto)){ echo $produto->id;}?>&rota=create" method="POST">
                     <table class="table table-striped">
                         <thead>
                         <tr>

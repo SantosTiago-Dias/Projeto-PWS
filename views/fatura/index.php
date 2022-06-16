@@ -3,6 +3,22 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
+                    <?php
+                    if(!empty($_SESSION['message'])) {
+                        if ($_SESSION['status']==="good")
+                        {
+                            echo '<div style="padding: 2%" class="btn-success text-center ">'.$_SESSION['message'].'</div><br><br>';
+                        }
+                        elseif ($_SESSION['status']==="bad")
+                        {
+                            echo '<div style="padding: 2%" class="btn-danger text-center ">'.$_SESSION['message'].'</div><br><br>';
+                        }
+
+                        unset($_SESSION['message']);
+                    }
+
+                    ?>
+
                     <h3 class="card-title">Faturas</h3>
 
                     <div class="card-tools">
@@ -18,6 +34,9 @@
                     </div>
                 </div>
 
+
+
+
                 <!-- /.card-header -->
                 <div class="card-body table-responsive p-0">
                     <table class="table table-hover text-nowrap">
@@ -32,13 +51,14 @@
                         </tr>
                         </thead>
                         <?php
-                        foreach ($faturas as $fatura){ ?>
+                        foreach ($faturas as $fatura){
+                            if($fatura->status!==null){?>
                         <tbody>
                         <tr>
                             <td><?= $fatura->id ?></td>
                             <td><?= $fatura->cliente->username ?></td>
                             <td><?= $fatura->dtafatura->format('Y-m-d H:i:s') ?></td>
-                            <td><?= $fatura->valortotal?></td>
+                            <td><?= $fatura->valortotal?>€</td>
 
 
 
@@ -59,7 +79,7 @@
                         </tr>
 
                         </tbody>
-                        <?php } ?>
+                        <?php }} ?>
                     </table>
                 </div>
                 <!-- /.card-body -->
