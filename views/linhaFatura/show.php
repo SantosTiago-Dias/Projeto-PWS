@@ -102,10 +102,15 @@
         <!-- this row will not appear when printing -->
         <div class="row no-print">
             <div class="col-12">
+                <?php if ($fatura->status == 0) { ?>
 
-                <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default float-right"><i class="fas fa-print"></i> Print</a>
+                <a href="router.php?c=fatura&a=emitir&id= <?=$fatura->id?>" style="margin-left: 1%" class="btn btn-success float-right"><i class="fa-solid fa-paper-plane"></i>  Emitir Fatura</a>
+                    <a href="router.php?c=fatura&a=anular&id= <?=$fatura->id?>" class="btn btn-danger float-right"><i class="fa-solid fa-trash"></i>  Anular Fatura</a>
                 <a href="router.php?c=fatura&a=index" class="btn btn-default "> Voltar atras</a>
-
+                <?php }else{ ?>
+                    <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default float-right"><i class="fas fa-print"></i> Print</a>
+                    <a href="router.php?c=fatura&a=index" class="btn btn-default "> Voltar atras</a>
+                <?php } ?>
             </div>
         </div>
     </div>

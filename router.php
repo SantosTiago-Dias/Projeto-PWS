@@ -147,6 +147,16 @@ else
                 case "selectCliente":
                     $controller->selectCliente();
                     break;
+
+                case "emitir":
+                    $idFatura=$_GET['id'];
+                    $controller->emitir($idFatura);
+                    break;
+
+                case "anular":
+                    $idFatura=$_GET['id'];
+                    $controller->anular($idFatura);
+                    break;
             }
             break;
         case "linhaFatura":
@@ -172,7 +182,8 @@ else
                 case "store":
                     $idFatura=$_GET['idFatura'];
                     $idProduto=$_GET['idProduto'];
-                    $controller->store($idFatura,$idProduto);
+                    $rota=$_GET['rota'];
+                    $controller->store($idFatura,$idProduto,$rota);
                     break;
                 case "edit":
                     $idFatura=$_GET['idFatura'];
@@ -185,6 +196,11 @@ else
                     $idProduto=$_GET['idProduto'];
 
                     $controller->update($idFatura,$idProduto);
+                    break;
+                case "delete":
+                    $idFatura=$_GET['idFatura'];
+                    $idProduto=$_GET['idProduto'];
+                    $controller->delete($idFatura,$idProduto);
                     break;
             }
             break;

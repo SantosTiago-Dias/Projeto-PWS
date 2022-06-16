@@ -79,7 +79,7 @@
                                             <td><input type="number" name="quantidade" min="0"  value="<?= $linhaFatura->quantidade ?>" required></td>
                                             <td><input style="color: black" type="number" name="preco" value="<?= $linhaFatura->produto->preco ?>" readonly></td>
                                             <td ><input style="color: black" type="text" name="taxa" value="<?= $linhaFatura->produto->iva->taxa ?>"readonly>%</td>
-                                            <td><button type="submit" class="btn btn-success"><i class="fas fa-check"></i></button> <a class="btn btn-danger" href="router.php?c=linhaFatura&a=edit&idFatura=<?= $fatura->id ?>"><i class="fa-solid fa-x"></i></a></td>
+                                            <td><button type="submit" class="btn btn-success"><i class="fas fa-check"></i></button> <a class="btn btn-danger" href="router.php?c=linhaFatura&a=delete&idFatura=<?= $fatura->id ?>&idProduto=<?= $linhaFatura->produto->id?>"><i class="fa-solid fa-x"></i></a></td>
                                         </form>
                                     </td>
                                 </tr>
@@ -89,7 +89,7 @@
                                 <tr style="color: white">
 
                                     <td style="display: none" name="id_Produto"><input type="text" name="id" value="<?= $produto->id ?>" >
-                                        <form action="router.php?c=linhaFatura&a=store&idFatura=<?= $fatura->id ?>&idProduto=<?php if(isset($produto)){ echo $produto->id;}?>" method="POST">
+                                        <form action="router.php?c=linhaFatura&a=store&idFatura=<?= $fatura->id ?>&idProduto=<?php if(isset($produto)){ echo $produto->id;}?>&rota=edit" method="POST">
                                             <td><input style="color: black"  type="text" name="nome" value="<?= $produto->nome ?>" readonly  ></td>
                                             <td><input type="number" name="quantidade" min="0" max="<?= $produto->stock ?>" required></td>
                                             <td><input style="color: black" type="number" name="preco" value="<?= $produto->preco ?>" readonly></td>
@@ -106,8 +106,39 @@
                         </table>
                     </form>
                         <div class="row no-print">
+                            <div class="row">
+                                <!-- accepted payments column -->
+                                <div class="col-6">
+
+                                </div>
+                                <!-- /.col -->
+                                <div class="col-6">
+
+
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <tr>
+                                                <th style="width:50%">Subtotal:</th>
+                                                <td><?= $fatura->valortotal-$fatura->ivatotal ?></td>
+
+
+                                            </tr>
+                                            <tr>
+                                                <th>Iva</th>
+                                                <td><?= $fatura->ivatotal ?></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Total:</th>
+                                                <td><?= $fatura->valortotal ?></td>
+                                            </tr>
+
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- /.col -->
+                            </div>
                             <div class="col-12">
-                                <a href="router.php?c=linhaFatura&a=index" class="btn btn-primary float-right" style="margin-right: 5px;">Voltar atras</a>
+                                <a href="router.php?c=fatura&a=index" class="btn btn-primary float-right" style="margin-right: 5px;">Voltar atras</a>
                                 <a href="router.php?c=fatura&a=index" class="btn btn-danger float-right" style="margin-right: 5px;">Anular Fatura</a>
 
                             </div>

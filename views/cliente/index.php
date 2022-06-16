@@ -1,4 +1,4 @@
-<div class="card" style="margin-left: 13%;">
+<div class="card" style="margin-left: 16%;">
     <div class="card-header">
         <h3 class="card-title">Clientes</h3>
     </div>

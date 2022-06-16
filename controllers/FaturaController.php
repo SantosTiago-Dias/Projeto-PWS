@@ -59,37 +59,6 @@ class FaturaController extends BaseController
         }
     }
 
-    public function edit($id)
-    {
-        $auth= new auth();
-        $empresa = Empresa::find([$id]);
-
-        if($auth->isLoggedIn())
-        {
-            $this->makeView('empresa', 'edit',['empresas'=>$empresa]);
-        }
-        else
-        {
-            $this->redirectToRoute('backend', 'index');
-        }
-    }
-
-    public function update($id)
-    {
-        //find resource (activerecord/model) instance where PK = $id
-        //your form name fields must match the ones of the table fields
-        $auth= new auth();
-        $nome=$auth->getUsername();
-        $attributes = array('nome' => $_POST['nome'], 'email' => $_POST['email'], 'telefone' => $_POST['telefone'], 'nif' => $_POST['nif'], 'morada' => $_POST['morada'], 'codPostal' => $_POST['codPostal'], 'local' => $_POST['local'], 'capSocial' => $_POST['capSocial'], 'descricao' => $_POST['descricao']);
-        $empresa = Empresa::find([$id]);
-        $empresa->update_attributes($_POST);
-        if ($empresa->is_valid()) {
-            $empresa->save();
-            $this->redirectToRoute('empresa', 'index');
-        } else {
-            $this->makeView('empresa', 'edit',['empresas'=>$empresa]);
-        }
-    }
 
     public function selectCliente()
     {
@@ -99,4 +68,21 @@ class FaturaController extends BaseController
         $this->makeView('fatura', 'selectClient',['clientes'=>$clientes]);
     }
 
+    public function emitir($idFatura)
+    {
+        $fatura=Fatura::find([$idFatura]);
+        $fatura->update_attributes(['status'=>1]);
+        $_SESSION['status'] = "good";
+        $_SESSION['message'] ="Fatura emitida com sucesso";
+        $this->redirectToRoute('fatura', 'index');
+    }
+
+    public function anular($idFatura)
+    {
+        $fatura=Fatura::find([$idFatura]);
+        $fatura->update_attributes(['status'=>null]);
+        $_SESSION['status'] = "bad";
+        $_SESSION['message'] ="Fatura anulada com sucesso";
+        $this->redirectToRoute('fatura', 'index');
+    }
 }
