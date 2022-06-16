@@ -8,6 +8,7 @@ require_once './controllers/FaturaController.php';
 require_once './controllers/IvaController.php';
 require_once './controllers/LinhaFaturaController.php';
 require_once './controllers/ProdutoController.php';
+require_once  './controllers/ClienteController.php';
 
 if(!isset($_GET['c'], $_GET['a']))
 {
@@ -196,14 +197,47 @@ else
 
             }
             break;
+
+        case "cliente":
+            $controller = new ClienteController();
+            switch ($a)
+            {
+                case "index":
+                    $controller->index();
+                    break;
+
+                case "create":
+                    $controller->create();
+                    break;
+
+                case "store":
+                    $controller->store();
+                    break;
+
+                case "edit":
+                    $idCliente=$_GET['id'];
+                    $controller->edit($idCliente);
+                    break;
+
+                case "update":
+
+                    $idCliente=$_GET['id'];
+                    $controller->update($idCliente);
+
+                    break;
+            }
+            break;
         case "site":
             $controller = new SiteController();
             $controller->index();
             break;
 
+
+
         default:
             $controller = new SiteController();
             $controller->index();
     }
+
 
 }
