@@ -166,16 +166,23 @@ else
                     $rota=$_GET['rota'];
                     $controller->selectProduto($idFatura,$rota);
                     break;
+
+                case "store":
+                    $idFatura=$_GET['idFatura'];
+                    $idProduto=$_GET['idProduto'];
+                    $controller->store($idFatura,$idProduto);
+                    break;
                 case "edit":
                     $idFatura=$_GET['idFatura'];
                     $idProduto=isset($_GET['idProduto']);
 
                     $controller->edit($idFatura,$idProduto);
                     break;
-                case "store":
+                case "update":
                     $idFatura=$_GET['idFatura'];
                     $idProduto=$_GET['idProduto'];
-                    $controller->store($idFatura,$idProduto);
+
+                    $controller->update($idFatura,$idProduto);
                     break;
             }
             break;

@@ -41,16 +41,16 @@
                             <td><?= $fatura->valortotal?></td>
 
 
-                            <td>
+
                             <?php
                             if($fatura->status==1){
-                                echo "Emitida";
+                                echo "<td style='background-color: green'>Emitida</td>";
                             }
                             else {
-                                echo "cancelada";
+                                echo "<td style='background-color: yellowgreen'>Laçamento</td>";
                             }
 
-                                ?></td>
+                                ?>
                             <td>
                                 <a href="router.php?c=linhaFatura&a=show&idFatura=<?= $fatura->id ?>"><i class="fa-solid fa-circle-info"></i></a>
                                 <a href="router.php?c=linhaFatura&a=edit&idFatura=<?= $fatura->id ?>"><i class="fa-solid fa-pen-to-square"></i></a>

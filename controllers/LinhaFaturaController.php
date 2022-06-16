@@ -61,6 +61,7 @@ class LinhaFaturaController extends BaseController
     public function store($idFatura,$idProduto)
     {
         //validar Fatura
+        var_dump($_POST);
         $quantidade=$_POST['quantidade'];
         $produto= Produto::find([$idProduto]);//vai buscar o produto
         $res=$produto->stock-$quantidade;//calcula o stock que vai ficar no produto
@@ -112,10 +113,6 @@ class LinhaFaturaController extends BaseController
 
 
         }
-
-       /*  */
-
-        //redirect linha fatura create(idFatura)
     }
 
     public function edit($idFatura,$idProduto)
@@ -133,18 +130,71 @@ class LinhaFaturaController extends BaseController
             $produto=Produto::find([$idProduto]);
 
 
-            $this->makeView('linhaFatura', 'edit',['linhafatura'=>$linhaFatura,'fatura'=>$fatura,'cliente'=>$cliente,'empresa'=>$empresa,'produto'=>$produto]);
+            $this->makeView('linhaFatura', 'edit',['linhafaturas'=>$linhaFatura,'fatura'=>$fatura,'cliente'=>$cliente,'empresa'=>$empresa,'produto'=>$produto]);
         }
         else
         {
-            $this->makeView('linhaFatura', 'edit',['linhafatura'=>$linhaFatura,'fatura'=>$fatura,'cliente'=>$cliente,'empresa'=>$empresa]);
+            $this->makeView('linhaFatura', 'edit',['linhafaturas'=>$linhaFatura,'fatura'=>$fatura,'cliente'=>$cliente,'empresa'=>$empresa]);
         }
 
     }
 
-    public function update($id)
+    public function update($idFatura,$idProduto)
     {
+        var_dump($idProduto);
+        $quantidade=$_POST['quantidade'];
+        $linhafatura= Linhafatura::find(['fatura_id'=>$idFatura,'produto_id'=>$idProduto]);
+        $produto= Produto::find([$idProduto]);//vai buscar o produto
+        var_dump($linhafatura);
+        var_dump($quantidade);
+        var_dump($produto);
+        if ($produto->stock > $quantidade)
+        {
+            $stock=0;
+            if ($linhafatura->quantidade>$quantidade)
+            {
+                //numero que eu quero encomendar e inferior
+                $diff=$linhafatura->quantidade-$quantidade;//diferença entre o valor que estava armazenado e oq vai ser armazenado
 
+            }
+            else
+            {
+                //numero que eu quero encomendar e superior
+                $stock=$produto->stock-$quantidade;
+
+            }
+
+            //iva
+            $valoriva=$_POST['taxa']/100;
+            $iva=$_POST['preco']*$valoriva;
+            //preco com iva
+            $precoiva=$_POST['preco']+$iva;
+            $valor=$precoiva*$quantidade;
+            //vai procurar a fatura
+            $fatura=Fatura::find([$idFatura]);
+            $values=array('quantidade'=>$quantidade,'valor'=>$_POST['preco'],'valor_iva'=>$precoiva,'fatura_id'=>$idFatura,'produto_id'=>$idProduto,'status'=>1);
+
+            //calcula o iva e o valor
+            $calcvalor=$fatura->valortotal+$valor;
+            $calciva=$fatura->ivatotal+$iva;
+
+            $linhafaturaexistente=Linhafatura::find(['fatura_id'=>$idFatura,'produto_id'=>$idProduto]);
+            $nproduto=$linhafaturaexistente->quantidade+$quantidade;
+            $linhafaturaexistente->update_attributes(['quantidade'=>$nproduto]);
+            if ($linhafaturaexistente->is_valid()) {
+                $produto->update_attributes(['stock'=>$stock]);
+                $fatura->update_attributes(['valortotal'=>$calcvalor,'ivatotal'=>$calciva]);
+                $linhafaturaexistente->save();
+                $this->redirectToRoute('linhaFatura', 'create',['idFatura'=>$idFatura]);
+            }else {
+                $this->makeView('fatura', 'index');
+            }
+        }
+        else
+        {
+            echo "valor invalido";
+        }
+        die();
     }
 
     public function selectProduto($idFatura,$rota)

@@ -1,4 +1,4 @@
-<div class="invoice p-3 mb-3" style="margin-left: 13%">
+<div class="invoice p-3 mb-3" style="margin-left: 16%">
     <!-- title row -->
     <div class="row">
         <div class="col-12">
@@ -54,7 +54,7 @@
         <div class="row no-print">
             <div class="col-12">
                 <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
-                <a href="router.php?c=fatura&a=index" class="btn btn-success float-right" style="margin-right: 5px;"><i class="fas fa-print"></i> Ver faturas</a>
+                <a href="router.php?c=fatura&a=store&id=<?php if(isset($cliente)) {echo $cliente->id;}?>" class="btn btn-success float-right" style="margin-right: 5px;"><i class="fas fa-print"></i> Guardar</a>
                 <button type="button" class="btn btn-danger float-right" style="margin-right: 5px;">Anular</button>
 
             </div>

@@ -56,56 +56,55 @@
             <div class="row">
                 <div class="col-12 table-responsive">
 
-                    <table class="table table-striped">
-                        <thead>
-                        <tr>
-                            <th>Produto</th>
-                            <th>Quantidade</th>
-                            <th>Preço Unidade</th>
-                            <th>Taxa</th>
-                            <th></th>
-                        </tr>
-                        </thead>
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Quantidade</th>
+                                <th>Preço Unidade</th>
+                                <th>Taxa</th>
+                                <th></th>
+                            </tr>
+                            </thead>
 
-                        <tbody>
+                            <tbody>
                             <?php
 
-                            foreach ($linhafatura as $linhaFaturas) { ?>
+                            foreach ($linhafaturas as $linhaFatura) { ?>
                                 <tr style="color: white">
 
-
-                                    <td style="display: none" name="id_Produto"><input type="text" name="id" value="<?= $linhaFaturas->id ?> >" ></td>
-                                    <td><input style="color: black"  type="text" name="nome" value="<?= $linhaFaturas->produto->nome ?>" readonly  ></td>
-                                    <td><input type="number" name="quantidade" min="0" max="<?= $linhaFaturas->quantidade ?>" value="<?= $linhaFaturas->quantidade ?>" required></td>
-                                    <td><input style="color: black" type="number" name="preco" value="<?= $linhaFaturas->valor ?>" readonly></td>
-                                    <td ><input style="color: black" type="text" name="taxa" value="<?= $linhaFaturas->valor_iva ?>" readonly>%</td>
-                                    <td><a type="submit" href="router.php?c=linhaFatura&a=update&idFatura=<?= $fatura->id ?>&idProduto=<?= $linhaFaturas->produto_id ?>" class="btn btn-success"><i class="fas fa-check"></i></a> <a class="btn btn-danger" href="router.php?c=linhaFatura&a=deleteProduct&idFatura=<?= $fatura->id ?>&idProduto=<?= $linhaFaturas->produto_id ?>"><i class="fa-solid fa-x"></i></a></td>
-                                    <td></td>
-
-
-
-
-
+                                    <td style="display: none" >
+                                        <form action="router.php?c=linhaFatura&a=update&idFatura=<?= $fatura->id ?>&idProduto=<?= $linhaFatura->produto->id?>" method="POST">
+                                            <td><input style="color: black"  type="text" name="nome" value="<?= $linhaFatura->produto->nome ?>" readonly  ></td>
+                                            <td><input type="number" name="quantidade" min="0"  value="<?= $linhaFatura->quantidade ?>" required></td>
+                                            <td><input style="color: black" type="number" name="preco" value="<?= $linhaFatura->produto->preco ?>" readonly></td>
+                                            <td ><input style="color: black" type="text" name="taxa" value="<?= $linhaFatura->produto->iva->taxa ?>"readonly>%</td>
+                                            <td><button type="submit" class="btn btn-success"><i class="fas fa-check"></i></button> <a class="btn btn-danger" href="router.php?c=linhaFatura&a=edit&idFatura=<?= $fatura->id ?>"><i class="fa-solid fa-x"></i></a></td>
+                                        </form>
+                                    </td>
                                 </tr>
                             <?php   }?>
 
                             <?php if(isset($produto)) {?>
                                 <tr style="color: white">
 
-                                    <td style="display: none" name="id_Produto"><input type="text" name="id" value="<?= $produto->id ?>" ></td>
-                                    <td><input style="color: black"  type="text" name="nome" value="<?= $produto->nome ?>" readonly  ></td>
-                                    <td><input type="number" name="quantidade" min="0" max="<?= $produto->stock ?>" required></td>
-                                    <td><input style="color: black" type="number" name="preco" value="<?= $produto->preco ?>" ></td>
-                                    <td ><input style="color: black" type="text" name="taxa" value="<?= $produto->iva->taxa ?>">%</td>
+                                    <td style="display: none" name="id_Produto"><input type="text" name="id" value="<?= $produto->id ?>" >
+                                        <form action="router.php?c=linhaFatura&a=store&idFatura=<?= $fatura->id ?>&idProduto=<?php if(isset($produto)){ echo $produto->id;}?>" method="POST">
+                                            <td><input style="color: black"  type="text" name="nome" value="<?= $produto->nome ?>" readonly  ></td>
+                                            <td><input type="number" name="quantidade" min="0" max="<?= $produto->stock ?>" required></td>
+                                            <td><input style="color: black" type="number" name="preco" value="<?= $produto->preco ?>" readonly></td>
+                                            <td ><input style="color: black" type="text" name="taxa" value="<?= $produto->iva->taxa ?>"readonly>%</td>
                                     <td><button type="submit" class="btn btn-success"><i class="fas fa-check"></i></button> <a class="btn btn-danger" href="router.php?c=linhaFatura&a=edit&idFatura=<?= $fatura->id ?>"><i class="fa-solid fa-x"></i></a></td>
-                                    <td></td>
+                                        </form>
+                                    </td>
                                 </tr>
 
                             <?php } ?>
 
 
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </form>
                         <div class="row no-print">
                             <div class="col-12">
                                 <a href="router.php?c=linhaFatura&a=index" class="btn btn-primary float-right" style="margin-right: 5px;">Voltar atras</a>

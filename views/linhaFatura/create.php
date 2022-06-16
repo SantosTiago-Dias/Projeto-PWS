@@ -4,7 +4,7 @@
         <div class="col-12">
             <h4>
                 <i class="fas fa-globe"></i> Fatura Nª <?=$fatura->id?>
-                <small class="float-right">Date: XXX</small>
+                <small class="float-right">Data: <?= date("Y-m-d"); ?></small>
             </h4>
         </div>
         <!-- /.col -->
@@ -92,8 +92,8 @@
                                     <td style="display: none" name="id_Produto"><input type="text" name="id" value="<?= $produto->id ?>" ></td>
                                     <td><input style="color: black"  type="text" name="nome" value="<?= $produto->nome ?>" readonly  ></td>
                                     <td><input type="number" name="quantidade" min="0" max="<?= $produto->stock ?>" required></td>
-                                    <td><input style="color: black" type="number" name="preco" value="<?= $produto->preco ?>" ></td>
-                                    <td ><input style="color: black" type="text" name="taxa" value="<?= $produto->iva->taxa ?>">%</td>
+                                    <td><input style="color: black" type="number" name="preco" value="<?= $produto->preco ?>" readonly></td>
+                                    <td ><input style="color: black" type="text" name="taxa" value="<?= $produto->iva->taxa ?>"readonly>%</td>
                                     <td><button type="submit" class="btn btn-success"><i class="fas fa-check"></i></button> <a class="btn btn-danger" href="router.php?c=linhaFatura&a=create&idFatura=<?= $fatura->id ?>"><i class="fa-solid fa-x"></i></a></td>
                                     <td></td>
                                 </tr>
@@ -123,7 +123,7 @@
                     <table class="table">
                         <tr>
                             <th style="width:50%">Subtotal:</th>
-                            <td></td>
+                            <td><?= $fatura->valortotal-$fatura->ivatotal ?></td>
 
 
                         </tr>
@@ -145,8 +145,8 @@
     <!-- this row will not appear when printing -->
     <div class="row no-print">
         <div class="col-12">
-            <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
-            <button type="button" class="btn btn-success float-right"> Emitir</button>
+
+            <a href="router.php?c=fatura&a=index" class="btn btn-success float-right"> Guardar</a>
             <button type="button" class="btn btn-danger float-right" style="margin-right: 5px;">Anular</button>
         </div>
     </div>

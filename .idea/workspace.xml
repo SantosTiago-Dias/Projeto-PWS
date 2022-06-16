@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40439ba3-e6c1-4627-8317-f0ba04f292a9" name="Changes" comment="Faturas adcionar feito">
+    <list default="true" id="40439ba3-e6c1-4627-8317-f0ba04f292a9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/LinhaFaturaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/LinhaFaturaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router.php" beforeDir="false" afterPath="$PROJECT_DIR$/router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/fatura/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/fatura/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/fatura/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/fatura/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/linhaFatura/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/linhaFatura/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/linhaFatura/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/linhaFatura/edit.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,6 +134,7 @@
       <workItem from="1654698713662" duration="7751000" />
       <workItem from="1654721207148" duration="703000" />
       <workItem from="1654749241991" duration="7533000" />
+      <workItem from="1655397778936" duration="1164000" />
     </task>
     <task id="LOCAL-00001" summary="login Funciona">
       <created>1653591013016</created>
