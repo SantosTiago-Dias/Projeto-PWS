@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40439ba3-e6c1-4627-8317-f0ba04f292a9" name="Changes" comment="Update workspace.xml">
+<<<<<<< HEAD
+    <list default="true" id="40439ba3-e6c1-4627-8317-f0ba04f292a9" name="Changes" comment="Update workspace.xml" />
+=======
+    <list default="true" id="40439ba3-e6c1-4627-8317-f0ba04f292a9" name="Changes" comment="Faturas adcionar feito">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/FaturaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/FaturaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/LinhaFaturaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/LinhaFaturaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Fatura.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/Fatura.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/fatura/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/fatura/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/fatura/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/fatura/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/iva/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/iva/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/iva/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/iva/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/linhaFatura/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/linhaFatura/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/linhaFatura/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/linhaFatura/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/linhaFatura/show.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/linhaFatura/show.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/produto/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/produto/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/stock/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/stock/index.php" afterDir="false" />
     </list>
+>>>>>>> be66f33e787b2342f74582cd9e93d90f171ab1af
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -140,11 +132,14 @@
       <workItem from="1654698713662" duration="7751000" />
       <workItem from="1654721207148" duration="703000" />
       <workItem from="1654749241991" duration="7533000" />
+<<<<<<< HEAD
       <workItem from="1654769927959" duration="4937000" />
       <workItem from="1655077553114" duration="657000" />
       <workItem from="1655254009055" duration="5996000" />
       <workItem from="1655288238030" duration="7063000" />
-      <workItem from="1655329976427" duration="11256000" />
+      <workItem from="1655329976427" duration="11358000" />
+=======
+>>>>>>> be66f33e787b2342f74582cd9e93d90f171ab1af
     </task>
     <task id="LOCAL-00001" summary="login Funciona">
       <created>1653591013016</created>
@@ -251,6 +246,7 @@
       <option name="project" value="LOCAL" />
       <updated>1654756732947</updated>
     </task>
+<<<<<<< HEAD
     <task id="LOCAL-00016" summary="Update workspace.xml">
       <created>1655295571304</created>
       <option name="number" value="00016" />
@@ -258,7 +254,17 @@
       <option name="project" value="LOCAL" />
       <updated>1655295571304</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Update workspace.xml">
+      <created>1655341336347</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1655341336348</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
+=======
+    <option name="localTasksCounter" value="16" />
+>>>>>>> be66f33e787b2342f74582cd9e93d90f171ab1af
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,9 +287,13 @@
     <MESSAGE value="Template dash" />
     <MESSAGE value="so para ter certeza" />
     <MESSAGE value="Faturas adcionar feito" />
+<<<<<<< HEAD
     <MESSAGE value="produtos" />
     <MESSAGE value="index fatura" />
     <MESSAGE value="Update workspace.xml" />
     <option name="LAST_COMMIT_MESSAGE" value="Update workspace.xml" />
+=======
+    <option name="LAST_COMMIT_MESSAGE" value="Faturas adcionar feito" />
+>>>>>>> be66f33e787b2342f74582cd9e93d90f171ab1af
   </component>
 </project>
