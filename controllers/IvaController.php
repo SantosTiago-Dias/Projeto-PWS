@@ -4,9 +4,16 @@ class IvaController extends BaseController
 {
     public function index()
     {
-
-        $ivas = Iva::all();
-        $this->makeView('iva', 'index', ['role' => $role, 'nome' => $nome,'ivas'=>$ivas]);
+        $auth= new Auth();
+        if($auth->isLoggedIn())
+        {
+            $ivas = Iva::all();
+            $this->makeView('iva', 'index', ['ivas'=>$ivas]);
+        }
+        else
+        {
+            $this->redirectToRoute('login', 'index');
+        }
 
     }
 
@@ -18,51 +25,80 @@ class IvaController extends BaseController
 
     public function create()
     {
-        $ivas = Iva::all();
+        $auth= new Auth();
+        if($auth->isLoggedIn())
+        {
+            $ivas = Iva::all();
 
-        $this->makeView('iva', 'create', ['role' => $role, 'nome' => $nome,'ivas'=>$ivas]);
+            $this->makeView('iva', 'create', ['ivas'=>$ivas]);
+        }
+        else
+        {
+            $this->redirectToRoute('login', 'index');
+        }
 
     }
 
     public function store()
     {
-        $attributes = array('taxa' => $_POST['iva'], 'descricao' => $_POST['descricao'],'status'=>'1');
-        $iva= new Iva($attributes);
-        if ($iva->is_valid()) {
+        $auth= new Auth();
+        if($auth->isLoggedIn())
+        {
+            $attributes = array('taxa' => $_POST['iva'], 'descricao' => $_POST['descricao'],'status'=>'1');
+            $iva= new Iva($attributes);
+            if ($iva->is_valid()) {
 
-            $iva->save();
-            //redirecionar para o index
-            $this->redirectToRoute('iva', 'index');
-        } else {
-            $this->makeView('iva', 'create', ['iva' => $iva]);
+                $iva->save();
+                //redirecionar para o index
+                $this->redirectToRoute('iva', 'index');
+            } else {
+                $this->makeView('iva', 'create', ['iva' => $iva]);
+            }
+        }
+        else
+        {
+            $this->redirectToRoute('login', 'index');
         }
     }
 
     public function edit($id)
     {
         $auth = new auth();
-        $iva = Iva::Find([$id]);
+        if($auth->isLoggedIn()) {
+            $iva = Iva::Find([$id]);
 
-        $nome = $auth->getUsername();
-        $role = $auth->getRole();
-        $this->makeView('iva', 'edit', ['role' => $role, 'nome' => $nome,'iva'=>$iva]);
+            $this->makeView('iva', 'edit', ['iva' => $iva]);
+        }
+        else
+            {
+                $this->redirectToRoute('login', 'index');
+            }
     }
 
     public function update($id)
     {
+        $auth= new Auth();
+        if($auth->isLoggedIn())
+        {
+            $attributes = array('taxa' => $_POST['iva'], 'descricao' => $_POST['descricao']);
+            $iva = Iva::Find([$id]);
 
-        $attributes = array('taxa' => $_POST['iva'], 'descricao' => $_POST['descricao']);
-        $iva = Iva::Find([$id]);
-
-        $iva->update_attributes($attributes);
-        if ($iva->is_valid()) {
-            $iva->save();
-            //redirecionar para o index
-            echo "aaa";
-            $this->redirectToRoute('iva', 'index');
-        } else {
-            $this->makeView('iva', 'edit', ['iva' => $iva]);
+            $iva->update_attributes($attributes);
+            if ($iva->is_valid()) {
+                $iva->save();
+                //redirecionar para o index
+                echo "aaa";
+                $this->redirectToRoute('iva', 'index');
+            } else {
+                $this->makeView('iva', 'edit', ['iva' => $iva]);
+            }
         }
+        else
+        {
+            $this->redirectToRoute('login', 'index');
+        }
+
+
     }
 
     public function ative($id)

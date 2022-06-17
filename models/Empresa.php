@@ -8,9 +8,9 @@ class empresa extends \ActiveRecord\Model
         array('telefone','is' => 9, 'message' => 'It must be provided'),
         array('nif','is' => 9,'message' => 'It must be provided'),
         array('morada', 'message' => 'It must be provided'),
-        array('codPostal','is' => 9, 'message' => 'It must be provided'),
-        array('Local', 'message' => 'It must be provided'),
-        array('capSocial','only_integer' => true, 'message' => 'It must be provided'),
+        array('codpostal','is' => 9, 'message' => 'It must be provided'),
+        array('local', 'message' => 'It must be provided'),
+        array('capsocial','only_integer' => true, 'message' => 'It must be provided'),
         array('descricao', 'message' => 'It must be provided'),
     );
 

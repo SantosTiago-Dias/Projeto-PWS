@@ -2,40 +2,40 @@
     <form action='router.php?c=cliente&a=store' method="post">
         <div class="mb-3" >
             <label for="exampleFormControlInput1" class="form-label">Nome</label>
-            <input type="text" class="form-control" name="username">
+            <input type="text" class="form-control" name="username" required>
         </div>
 
         <div class="mb-3" >
             <label for="exampleFormControlInput1" class="form-label">Email</label>
-            <input type="email" class="form-control" name="email">
+            <input type="email" class="form-control" name="email" required>
         </div>
 
         <div class="mb-3" >
             <label for="exampleFormControlInput1" class="form-label">Password</label>
-            <input type="password" class="form-control" name="password">
+            <input type="password" class="form-control" name="password" required>
         </div>
 
         <div class="mb-3" >
             <label for="exampleFormControlInput1" class="form-label">Telefone</label>
-            <input type="number" class="form-control" name="telefone">
+            <input type="number" class="form-control" name="telefone" required>
         </div>
 
         <div class="mb-3" >
             <label for="exampleFormControlInput1" class="form-label">Nif</label>
-            <input type="number" class="form-control" name="nif">
+            <input type="number" class="form-control" name="nif"  required >
         </div>
 
         <div class="mb-3" >
             <label for="exampleFormControlInput1" class="form-label">Morada</label>
-            <input type="text" class="form-control" name="morada">
+            <input type="text" class="form-control" name="morada" required>
         </div>
         <div class="mb-3" >
             <label for="exampleFormControlInput1" class="form-label">Localidade</label>
-            <input type="text" class="form-control" name="localidade">
+            <input type="text" class="form-control" name="localidade" required>
         </div>
         <div class="mb-3" >
             <label for="exampleFormControlInput1" class="form-label">Código Postal</label>
-            <input type="text" class="form-control" name="codPostal">
+            <input type="text" class="form-control" name="codPostal" required>
         </div>
 
         <a href="router.php?c=cliente&a=index"

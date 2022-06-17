@@ -139,10 +139,6 @@ else
                     $controller->store($id);
                     break;
 
-                case "update":
-                    $id=$_GET['id'];
-                    $controller->update($id);
-                    break;
 
                 case "selectCliente":
                     $controller->selectCliente();
@@ -156,6 +152,11 @@ else
                 case "anular":
                     $idFatura=$_GET['id'];
                     $controller->anular($idFatura);
+                    break;
+
+                case "search":
+
+                    $controller->search();
                     break;
             }
             break;

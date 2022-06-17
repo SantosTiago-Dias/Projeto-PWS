@@ -4,7 +4,7 @@
         <div class="col-12">
             <h4>
                 <i class="fas fa-globe"></i> Fatura Nª xxxx
-                <small class="float-right">Date: XXX</small>
+                <small class="float-right">Date: <?= date("Y-m-d"); ?></small>
             </h4>
         </div>
         <!-- /.col -->

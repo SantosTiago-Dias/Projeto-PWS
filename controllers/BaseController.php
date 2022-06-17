@@ -14,6 +14,7 @@ class BaseController
         {
             $nome=$auth->getUsername();
             $role=$auth->getRole();
+
             require_once './views/layout/header_Back.php';
             require_once './views/' . $controllerPrefix . '/' . $viewName . '.php';
 
@@ -31,16 +32,19 @@ class BaseController
 
     public function redirectToRoute($controllerPrefix, $action,array $params=[])
     {
-        //extract($params);
-        var_dump($params);
 
 
-        if ($params != "")
+        if ($params != null)
         {
-            header('Location: ./router.php?c=' . $controllerPrefix . '&a=' . $action .'&'.http_build_query($params, ' ', '&amp;'));
+
+
+            header('Location: ./router.php?c=' . $controllerPrefix . '&a=' . $action .'&'.http_build_query($params, ' ', '&'));
+
         }
         else
         {
+
+
             header('Location: ./router.php?c=' . $controllerPrefix . '&a=' . $action);
         }
 

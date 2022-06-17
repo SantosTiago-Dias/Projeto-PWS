@@ -30,24 +30,23 @@
     <nav class="navbar navbar-expand navbar-dark">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <h1><a href="?c=site" class="nav-link"><?= APP_NAME ?></a></h1>
-
+            <li class="nav-item" style="color: white !important;">
+                <h1><?= APP_NAME ?></h1>
+            </li>
         </ul>
 
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
-            <a href="?c=login&a=logout">Logout</a>
+            <a type="button" class="btn btn-primary" href="?c=login&a=logout">Logout</a>
         </ul>
     </nav>
 
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="?c=site" class="nav-link">
 
-            <h1><?= APP_NAME ?> </h1>
-        </a>
+            <h1 class="text-center"><?= APP_NAME ?></h1>
+
 
         <!-- Sidebar -->
         <div class="sidebar">
@@ -108,13 +107,13 @@
                         </a>
                         <ul class="nav nav">
                             <li class="nav-item">
-                                <a href="./public/index.html" class="nav-link">
+                                <a href="router.php?c=funcionario&a=create" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Adicionar Funcionarios</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./public/index.html" class="nav-link">
+                                <a href="router.php?c=funcionario&a=index" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Ver Funcionarios</p>
                                 </a>
@@ -123,7 +122,7 @@
                         </ul>
                     </li>
                     <?php } ?>
-                    <?php if($role=='Admin' || $role='Funcinario'){?>
+                    <?php if($role=='Admin' || $role=='Funcionario'){?>
                     <li class="nav-item">
                         <a  class="nav-link">
 
@@ -143,7 +142,7 @@
                         </ul>
                     </li>
                     <?php } ?>
-                    <?php if($role=='Admin' || $role='Funcinario'){?>
+                    <?php if($role=='Admin' || $role=='Funcionario'){?>
                     <li class="nav-item">
                         <a  class="nav-link">
 
@@ -154,7 +153,13 @@
                         </a>
                         <ul class="nav nav">
                             <li class="nav-item">
-                                <a href="./public/index.html" class="nav-link">
+                                <a href="router.php?c=funcionario&a=create" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Adicionar Cliente</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="router.php?c=cliente&a=index" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Ver Clientes</p>
                                 </a>
@@ -163,7 +168,7 @@
                         </ul>
                     </li>
                     <?php } ?>
-                    <?php if($role=='Admin' || $role='Funcinario'){?>
+                    <?php if($role=='Admin' || $role=='Funcionario'){?>
                     <li class="nav-item">
                         <a  class="nav-link">
                             <p>
@@ -177,12 +182,7 @@
                                     <p>Produtos</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="./public/index.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Stock</p>
-                                </a>
-                            </li>
+
                             <li class="nav-item">
                                 <a href="?c=iva&a=index" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>

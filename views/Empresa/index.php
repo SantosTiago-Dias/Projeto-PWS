@@ -33,8 +33,7 @@
                        class="btn btn-info" role="button">Show</a>
                     <a href="router.php?c=empresa&a=edit&id=<?= $empresa->id ?>"
                        class="btn btn-info" role="button">Edit</a>
-                    <a href="router.php?c=book&a=delete&id=<?=$empresa->id ?>"
-                       class="btn btn-warning" role="button">Delete</a>
+
                 </td>
 
             </tr>

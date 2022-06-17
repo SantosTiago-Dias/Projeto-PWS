@@ -10,6 +10,7 @@ class Auth
         $nome=$user->username;
         if($username == $nome && $password == $pass)
         {
+            $_SESSION['id'] = $user->id;
             $_SESSION['nome'] = $nome;
             $_SESSION['role'] = $user->role;
             return true;
@@ -40,5 +41,10 @@ class Auth
     public function getRole()
     {
         return $_SESSION['role'];
+    }
+
+    public function getId()
+    {
+        return $_SESSION['id'];
     }
 }

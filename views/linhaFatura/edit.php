@@ -4,7 +4,7 @@
         <div class="col-12">
             <h4>
                 <i class="fas fa-globe"></i> Fatura Nª <?=$fatura->id?>
-                <small class="float-right">Date: XXX</small>
+                <small class="float-right">Date: <?= date("Y-m-d"); ?></small>
             </h4>
         </div>
         <!-- /.col -->
@@ -138,7 +138,7 @@
                                 <!-- /.col -->
                             </div>
                             <div class="col-12">
-                                <a href="router.php?c=fatura&a=index" class="btn btn-primary float-right" style="margin-right: 5px;">Voltar atras</a>
+                                <a href="router.php?c=fatura&a=index" class="btn btn-success float-right" style="margin-right: 5px;">Guardar</a>
                                 <a href="router.php?c=fatura&a=index" class="btn btn-danger float-right" style="margin-right: 5px;">Anular Fatura</a>
 
                             </div>

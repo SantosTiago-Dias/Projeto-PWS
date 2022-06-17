@@ -5,6 +5,15 @@ class SiteController extends BaseController
 {
     function index()
     {
-        $this->makeView('site', 'index');
+        $auth = new Auth();
+
+        if ($auth->isLoggedIn())
+        {
+            $this->redirectToRoute('fatura', 'index');
+        }
+        else{
+            $this->makeView('site', 'index');
+        }
+
     }
 }

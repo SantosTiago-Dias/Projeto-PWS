@@ -1,6 +1,6 @@
 
 
-<div style="margin-left: 14%">
+<div style="margin-left: 17%">
     <div class="card-header">
         <h3 class="">Empresa</h3>
 

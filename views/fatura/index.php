@@ -4,6 +4,7 @@
             <div class="card">
                 <div class="card-header">
                     <?php
+
                     if(!empty($_SESSION['message'])) {
                         if ($_SESSION['status']==="good")
                         {
@@ -20,19 +21,22 @@
                     ?>
 
                     <h3 class="card-title">Faturas</h3>
+                    <form action="router.php?c=fatura&a=search" method="POST">
+                        <div class="d-flex justify-content-end">
 
-                    <div class="card-tools">
-                        <div class="input-group input-group-sm" style="width: 100%;margin-top: 10%">
-                            <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                                <input type="search" class="formw rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" name="value_search" />
+                                <button type="submit" class="input-group-text border-0" id="search-addon">
+                                <i  class="fas fa-search"></i>
+                              </button>
 
-                            <div class="input-group-append">
-                                <button type="submit" class="btn btn-default">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
+
                         </div>
+                    </form>
+                    <div class="d-flex justify-content-end">
+
+
                     </div>
-                </div>
+
 
 
 
@@ -44,14 +48,16 @@
                         <tr>
                             <th>NºFatura</th>
                             <th>Nome Cliente</th>
-                            <th>Nome cliente</th>
+                            <th>Data</th>
                             <th>Valor</th>
                             <th>Status</th>
                             <th></th>
                         </tr>
                         </thead>
                         <?php
+
                         foreach ($faturas as $fatura){
+
                             if($fatura->status!==null){?>
                         <tbody>
                         <tr>
@@ -72,8 +78,14 @@
 
                                 ?>
                             <td>
+
                                 <a href="router.php?c=linhaFatura&a=show&idFatura=<?= $fatura->id ?>"><i class="fa-solid fa-circle-info"></i></a>
+
+                                <?php
+
+                                if($funcao !== "Cliente" && $fatura->status !== 1 ) { ?>
                                 <a href="router.php?c=linhaFatura&a=edit&idFatura=<?= $fatura->id ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <?php } ?>
 
                             </td>
                         </tr>

@@ -1,7 +1,7 @@
 
 
 <form action="router.php?c=empresa&a=update&id=<?=$empresas->id?>" method="post">
-<div style="margin-left: 14%">
+<div style="margin-left: 17%">
     <div class="card-header">
         <h3 class="">Empresa</h3>
 

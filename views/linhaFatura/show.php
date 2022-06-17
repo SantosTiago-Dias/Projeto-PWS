@@ -4,7 +4,7 @@
         <div class="col-12">
             <h4>
                 <i class="fas fa-globe"></i> Fatura Nª <?=$fatura->id?>
-                <small class="float-right">Date: XXX</small>
+                <small class="float-right">Date:  <?= date("Y-m-d"); ?></small>
             </h4>
         </div>
         <!-- /.col -->
@@ -98,17 +98,48 @@
             <!-- /.col -->
         </div>
         <!-- /.row -->
+        <div class="row no-print">
+            <div class="row">
+                <!-- accepted payments column -->
+                <div class="col-6">
 
+                </div>
+                <!-- /.col -->
+                <div class="col-6">
+
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tr>
+                                <th style="width:50%">Subtotal:</th>
+                                <td><?= $fatura->valortotal-$fatura->ivatotal ?></td>
+
+
+                            </tr>
+                            <tr>
+                                <th>Iva</th>
+                                <td><?= $fatura->ivatotal ?></td>
+                            </tr>
+                            <tr>
+                                <th>Total:</th>
+                                <td><?= $fatura->valortotal ?></td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+                <!-- /.col -->
+            </div>
         <!-- this row will not appear when printing -->
         <div class="row no-print">
             <div class="col-12">
-                <?php if ($fatura->status == 0) { ?>
+                <?php if ($fatura->status == 0 && $funcao != "Cliente") { ?>
 
                 <a href="router.php?c=fatura&a=emitir&id= <?=$fatura->id?>" style="margin-left: 1%" class="btn btn-success float-right"><i class="fa-solid fa-paper-plane"></i>  Emitir Fatura</a>
                     <a href="router.php?c=fatura&a=anular&id= <?=$fatura->id?>" class="btn btn-danger float-right"><i class="fa-solid fa-trash"></i>  Anular Fatura</a>
                 <a href="router.php?c=fatura&a=index" class="btn btn-default "> Voltar atras</a>
                 <?php }else{ ?>
-                    <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default float-right"><i class="fas fa-print"></i> Print</a>
+                    <a href="#" rel="noopener" target="_blank" class="btn btn-default float-right"><i class="fas fa-print"></i> Print</a>
                     <a href="router.php?c=fatura&a=index" class="btn btn-default "> Voltar atras</a>
                 <?php } ?>
             </div>
