@@ -4,11 +4,8 @@ class IvaController extends BaseController
 {
     public function index()
     {
-        $auth = new auth();
-        $ivas = Iva::all();
 
-        $nome = $auth->getUsername();
-        $role = $auth->getRole();
+        $ivas = Iva::all();
         $this->makeView('iva', 'index', ['role' => $role, 'nome' => $nome,'ivas'=>$ivas]);
 
     }
@@ -21,11 +18,8 @@ class IvaController extends BaseController
 
     public function create()
     {
-        $auth = new auth();
         $ivas = Iva::all();
 
-        $nome = $auth->getUsername();
-        $role = $auth->getRole();
         $this->makeView('iva', 'create', ['role' => $role, 'nome' => $nome,'ivas'=>$ivas]);
 
     }

@@ -8,12 +8,11 @@
             <thead>
             <tr>
                 <!-- -->
-                <th>Referencia</th>
+                <th>Referência</th>
                 <th>Nome</th>
                 <th>Stock</th>
                 <th>Preço</th>
-
-                <th></th>
+                <th>Status</th>
             </tr>
             </thead>
 
@@ -29,17 +28,51 @@
                     }?>
                     <td style="color: white"><?= number_format($produto->preco, 2, '.', '');?>€</td>
 
+                    <?php if ($produto->status== '1')
+                    {
+                        echo '<td style="background-color: green;color: white">Ativo</td>';
+                    }
+                    else{
+                        echo '<td style="background-color: red;color: white">Desativo</td>';
+                    }?>
+
+                    <td>
+
+                        <a href="router.php?c=produto&a=edit&id=<?= $produto->id ?>"
+                           class="btn btn-info" role="button">Edit</a>
+
+                        <a href="router.php?c=produto&a=adicionarstock&id=<?= $produto->id ?>"
+                           class="btn btn-info" role="button">Adicionar Stock</a>
+
+                        <?php if ($produto->status== '1')
+                        {
+                            echo '   <a href="router.php?c=produto&a=desativar&id='.$produto->id.'"
+                        class="btn btn-danger" role="button">Desativar</a>';
+                        }
+                        else{
+                            echo '   <a href="router.php?c=produto&a=ativar&id='.$produto->id.'"
+                        class="btn btn-success" role="button">Ativar</a>';
+                        }?>
+
+                    </td>
 
                 </tr>
+
+
             <?php } ?>
+
+
 
 
             </tbody>
 
         </table>
         <br>
-        <a href="router.php?c=iva&a=create"
-           class="btn btn-info" role="button">Criar Iva</a>
+
+
+        <a href="router.php?c=produto&a=create"
+           class="btn btn-info" role="button">Criar Produto</a>
+
     </div>
     <!-- /.card-body -->
 </div>
