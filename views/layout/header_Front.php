@@ -1,41 +1,54 @@
-<html lang="en">
 <head>
-
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta charset="utf-8">
     <title><?= APP_NAME ?></title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free Website Template" name="keywords">
+    <meta content="Free Website Template" name="description">
 
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="./public/plugins/fontawesome-free/css/all.min.css">
-    <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="./public/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="./public/css/adminlte.min.css">
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Flaticon Font -->
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="public/style.css" rel="stylesheet">
 </head>
-<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand navbar-dark">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-        <li class="nav-item">
-            <a href="?c=site" class="nav-link"><?= APP_NAME ?></a>
-        </li>
 
-    </ul>
+<body class="bg-white">
+<!-- Topbar Start -->
+<div class="container-fluid">
+    <div class="row bg-secondary py-2 px-lg-5">
 
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-        <!-- Navbar Search -->
-        <li class="nav-item">
-            <a href="?c=login&a=login" class="nav-link">Login</a>
-        </li>
+    </div>
+    <div class="row py-3 px-lg-5">
+        <div class="col-lg-4">
+            <a href="?c=site"class="navbar-brand d-none d-lg-block">
+                <h1 class="m-0 display-5 text-capitalize font-italic"><span class="text-primary">Fat</span>ura+</h1>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Topbar End -->
 
-        <!-- Messages Dropdown Menu -->
-        <li class="nav-item dropdown">
 
-        </li>
-    </ul>
-</nav>
-<!-- /.navbar -->
+<!-- Navbar Start -->
+<div class="container-fluid p-0 nav-bar">
+    <nav class="navbar navbar-expand-lg bg-none navbar-dark py-0">
+        <a href="" class="navbar-brand d-block d-lg-none">
+            <h1 class="m-0 display-5 text-capitalize font-italic text-white"><span class="text-primary">Safety</span>First</h1>
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+    </nav>
+</div>
+<!-- Navbar End -->

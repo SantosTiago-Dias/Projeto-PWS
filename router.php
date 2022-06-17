@@ -9,6 +9,7 @@ require_once './controllers/IvaController.php';
 require_once './controllers/LinhaFaturaController.php';
 require_once './controllers/ProdutoController.php';
 require_once  './controllers/ClienteController.php';
+require_once './controllers/FuncionarioController.php';
 
 if(!isset($_GET['c'], $_GET['a']))
 {
@@ -279,6 +280,37 @@ else
 
                     break;
             }
+            break;
+        case "funcionario":
+            $controller = new FuncionarioController();
+            switch ($a)
+            {
+                case "index":
+                    $controller->index();
+                    break;
+
+                case "create":
+                    $controller->create();
+                    break;
+
+                case "store":
+                    $controller->store();
+                    break;
+
+                case "edit":
+                    $idFuncinario=$_GET['id'];
+                    $controller->edit($idFuncinario);
+                    break;
+
+                case "update":
+
+                    $idFuncinario=$_GET['id'];
+                    $controller->update($idFuncinario);
+
+                    break;
+            }
+
+
             break;
         case "site":
             $controller = new SiteController();

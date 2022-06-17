@@ -1,5 +1,5 @@
 <?php require_once './views/layout/header_Front.php'; ?>
-    <div class="container">
+    <div style="height: 750px" class="container">
         <div class="row">
             <div class="col"></div>
             <div class="col">

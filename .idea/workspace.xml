@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="40439ba3-e6c1-4627-8317-f0ba04f292a9" name="Changes" comment="editar fatura a meio">
+    <list default="true" id="40439ba3-e6c1-4627-8317-f0ba04f292a9" name="Changes" comment="Funcionarios">
+      <change afterPath="$PROJECT_DIR$/public/img2/Galas.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img2/pera.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/FaturaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/FaturaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/LinhaFaturaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/LinhaFaturaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Utilizadore.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/Utilizadore.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/router.php" beforeDir="false" afterPath="$PROJECT_DIR$/router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/cliente/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/cliente/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/cliente/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/cliente/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/fatura/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/fatura/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/fatura/selectClient.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/fatura/selectClient.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/linhaFatura/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/linhaFatura/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/linhaFatura/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/linhaFatura/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/linhaFatura/selectProduto.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/linhaFatura/selectProduto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/linhaFatura/show.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/linhaFatura/show.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layout/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/layout/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layout/header_Front.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/layout/header_Front.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/site/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +22,13 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <excluded-from-favorite>
@@ -79,18 +84,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/Icons" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\Projeto PWC\public\Icons" />
@@ -100,9 +99,11 @@
       <recent name="C:\wamp64\www\Projeto PWC\views\iva" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Projeto-PWS\public\img2" />
+      <recent name="C:\wamp64\www\Projeto-PWS\public" />
+      <recent name="C:\wamp64\www\Projeto-PWS\public\img" />
       <recent name="C:\wamp64\www\Projeto PWC\public\Icons" />
       <recent name="C:\wamp64\www\Projeto PWC\vendor" />
-      <recent name="C:\wamp64\www\Projeto PWC\public" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -254,7 +255,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655401543778</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Funcionarios">
+      <created>1655414826837</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1655414826837</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Funcionarios">
+      <created>1655414972375</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1655414972375</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,6 +293,7 @@
     <MESSAGE value="so para ter certeza" />
     <MESSAGE value="Faturas adcionar feito" />
     <MESSAGE value="editar fatura a meio" />
-    <option name="LAST_COMMIT_MESSAGE" value="editar fatura a meio" />
+    <MESSAGE value="Funcionarios" />
+    <option name="LAST_COMMIT_MESSAGE" value="Funcionarios" />
   </component>
 </project>
