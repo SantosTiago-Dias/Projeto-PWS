@@ -243,6 +243,7 @@ else
 
                     break;
             }
+            break;
         case "funcionario":
             $controller = new FuncionarioController();
             switch ($a)
